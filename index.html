@@ -1,26 +1,17 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Márcia Araújo | Terapia Nutricional em Oncologia</title>
-  <meta name="description" content="Terapia nutricional no tratamento oncológico. Atendimento online para pacientes e familiares, com manejo alimentar individualizado durante o tratamento.">
-
-  <!-- Tipografia institucional -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Terapia nutricional no tratamento oncológico. Atendimento online para pacientes e familiares, com manejo alimentar individualizado e condutas alinhadas à fase terapêutica e sintomas." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0f172a" />
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    body {
-      font-family: "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height: 1.55;
-    }
-
     /* WhatsApp flutuante */
     .wa-float{
       position: fixed;
@@ -37,252 +28,325 @@
       box-shadow: 0 10px 25px rgba(0,0,0,.18);
       text-decoration: none;
     }
-    .wa-float svg {
-      width: 28px;
-      height: 28px;
-      fill: #fff;
-    }
+    .wa-float:hover { filter: brightness(.96); }
+    .wa-float svg { width: 28px; height: 28px; fill: #fff; }
   </style>
 </head>
 
 <body class="bg-slate-50 text-slate-900 antialiased">
+  <!-- HEADER (logo realmente grande e alinhado) -->
+  <header class="sticky top-0 bg-white/90 backdrop-blur border-b border-slate-200 z-50">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between min-h-[92px]">
+      <a href="#inicio" class="flex items-center gap-4">
+        <!-- LOGO GRANDE -->
+        <img
+          src="./logo-clinica.png"
+          alt="Márcia Araújo – Terapia Nutricional em Oncologia"
+          class="h-20 w-auto"
+          loading="lazy"
+        />
+        <!-- Texto equilibrado -->
+        <div class="leading-tight hidden sm:block">
+          <p class="text-base font-semibold text-slate-900">Márcia Araújo</p>
+          <p class="text-sm text-slate-600">Terapia Nutricional em Oncologia</p>
+          <p class="text-xs text-slate-500">Brasil | Atendimento online • pacientes e familiares</p>
+        </div>
+      </a>
 
-<!-- HEADER -->
-<header class="sticky top-0 bg-white/90 backdrop-blur border-b border-slate-200 z-50">
-  <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between min-h-[76px]">
-
-    <!-- Logo + identificação -->
-    <a href="#inicio" class="flex items-center gap-3">
-      <img
-        src="./logo-clinica.png"
-        alt="Márcia Araújo – Nutrição Oncológica"
-        class="h-14 w-auto"
-        loading="lazy"
-      />
-      <div class="leading-tight hidden sm:block">
-        <p class="font-semibold text-slate-900">Márcia Araújo</p>
-        <p class="text-xs text-slate-600">Terapia Nutricional em Oncologia</p>
+      <div class="hidden md:flex gap-6 text-sm text-slate-700">
+        <a href="#para-quem" class="hover:underline">Para quem é</a>
+        <a href="#como-funciona" class="hover:underline">Como funciona</a>
+        <a href="#atuacao" class="hover:underline">Atuação clínica</a>
+        <a href="#servicos" class="hover:underline">Serviços</a>
+        <a href="#faq" class="hover:underline">FAQ</a>
+        <a href="#contato" class="hover:underline">Contato</a>
       </div>
-    </a>
 
-    <!-- Menu -->
-    <div class="hidden md:flex gap-6 text-sm text-slate-700">
-      <a href="#sobre" class="hover:underline">Sobre</a>
-      <a href="#para-quem" class="hover:underline">Para quem é</a>
-      <a href="#como-funciona" class="hover:underline">Como funciona</a>
-      <a href="#servicos" class="hover:underline">Serviços</a>
-      <a href="#faq" class="hover:underline">FAQ</a>
-      <a href="#contato" class="hover:underline">Contato</a>
-    </div>
-
-    <!-- CTA -->
-    <a href="#contato"
-       class="text-sm font-semibold px-4 py-2 rounded-xl bg-slate-900 text-white">
-      Agendar consulta nutricional
-    </a>
-  </nav>
-</header>
-
-<main id="inicio" class="max-w-6xl mx-auto px-4">
-
-<!-- HERO -->
-<section class="py-14 grid md:grid-cols-2 gap-10 items-center">
-  <div>
-    <p class="text-sm font-semibold text-slate-600">
-      Terapia nutricional em oncologia • Brasil | Atendimento online
-    </p>
-
-    <h1 class="mt-3 text-4xl md:text-5xl font-semibold tracking-tight leading-[1.12]">
-      Terapia nutricional no tratamento oncológico
-    </h1>
-
-    <p class="mt-5 text-lg text-slate-700 leading-relaxed">
-      Acompanhamento individualizado, com foco no manejo alimentar durante o tratamento oncológico,
-      visando reduzir desconfortos relacionados à alimentação, preservar a ingestão possível
-      e adequar a conduta nutricional à tolerância, aos sintomas e à fase terapêutica do paciente.
-    </p>
-
-    <div class="mt-7 flex flex-col sm:flex-row gap-3">
-      <a href="#contato"
-         class="px-5 py-3 rounded-2xl bg-slate-900 text-white font-semibold text-center">
-        Agendar consulta nutricional
+      <a href="#contato" class="text-sm font-semibold px-4 py-2 rounded-xl bg-slate-900 text-white">
+        Solicitar agendamento
       </a>
+    </nav>
+  </header>
 
-      <a href="https://wa.me/5511981619625?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20acompanhamento%20em%20terapia%20nutricional%20oncol%C3%B3gica%20(paciente%2Familiar)."
-         target="_blank"
-         class="px-5 py-3 rounded-2xl bg-white border border-slate-300 font-semibold text-center">
-        Contato para acompanhamento nutricional
-      </a>
-    </div>
+  <main id="inicio" class="max-w-6xl mx-auto px-4">
+    <!-- HERO (mais completo e clínico) -->
+    <section class="py-14 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-sm font-semibold text-slate-600">
+          Terapia nutricional em oncologia • atendimento online
+        </p>
 
-    <div class="mt-6 text-sm text-slate-600">
-      <p><strong>Márcia Araújo</strong> • Nutricionista • <strong>CRN:</strong> PREENCHA_AQUI</p>
-      <p>Atendimento online • pacientes e familiares</p>
-    </div>
-  </div>
+        <h1 class="mt-3 text-4xl md:text-5xl font-semibold tracking-tight leading-[1.12]">
+          Manejo alimentar clínico durante o tratamento oncológico
+        </h1>
 
-  <!-- Card lateral -->
-  <div class="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm">
-    <h2 class="text-xl font-semibold tracking-tight">Atuação da terapia nutricional em oncologia</h2>
-    <p class="mt-3 text-slate-700 text-sm leading-relaxed">
-      Condutas individualizadas considerando diagnóstico, tratamento instituído,
-      sintomas apresentados e evolução clínica.
-    </p>
-    <ul class="mt-4 space-y-3 text-slate-700">
-      <li>• Manejo alimentar direcionado aos sintomas</li>
-      <li>• Adequação de consistência, volume e fracionamento das refeições</li>
-      <li>• Avaliação criteriosa da ingestão e da necessidade de suplementação</li>
-      <li>• Monitoramento e ajustes conforme evolução clínica</li>
-    </ul>
-    <p class="mt-4 text-xs text-slate-500">
-      Conteúdo informativo. Não substitui avaliação e conduta médica.
-    </p>
-  </div>
-</section>
+        <p class="mt-5 text-lg text-slate-700 leading-relaxed">
+          Acompanhamento individualizado voltado ao <strong>manejo alimentar</strong> em diferentes fases do tratamento
+          (quimioterapia, radioterapia, imunoterapia, hormonioterapia e perioperatório), com foco em reduzir desconfortos
+          relacionados à alimentação, preservar a ingestão possível e organizar condutas compatíveis com a tolerância,
+          sintomas e evolução clínica.
+        </p>
 
-<!-- SOBRE -->
-<section id="sobre" class="py-10">
-  <div class="bg-white rounded-3xl border border-slate-200 p-8">
-    <h2 class="text-2xl font-semibold tracking-tight">Sobre a nutricionista</h2>
-    <p class="mt-4 text-slate-700 leading-relaxed max-w-4xl">
-      A terapia nutricional no cuidado oncológico é conduzida de forma individualizada,
-      considerando a fase do tratamento, os sintomas, a tolerância alimentar
-      e a realidade clínica de cada paciente.
-      O acompanhamento busca orientar condutas seguras e compatíveis
-      com o contexto do paciente e de seus familiares.
-    </p>
-  </div>
-</section>
+        <p class="mt-4 text-slate-700 leading-relaxed">
+          O plano é construído de forma prática, considerando rotina, preferências, limitações do momento e orientações de segurança alimentar,
+          sem promessas de resultado e sem linguagem comercial.
+        </p>
 
-<!-- PARA QUEM É -->
-<section id="para-quem" class="py-12">
-  <h2 class="text-2xl font-semibold tracking-tight">Para quem é</h2>
-  <p class="mt-3 text-slate-700 max-w-3xl leading-relaxed">
-    Indicado para pacientes em tratamento oncológico ou em recuperação,
-    bem como para familiares e cuidadores envolvidos no cuidado alimentar.
-  </p>
+        <div class="mt-7 flex flex-col sm:flex-row gap-3">
+          <a class="px-5 py-3 rounded-2xl bg-slate-900 text-white font-semibold text-center" href="#contato">
+            Solicitar avaliação nutricional
+          </a>
+          <a class="px-5 py-3 rounded-2xl bg-white border border-slate-300 font-semibold text-center"
+             href="https://wa.me/5511981619625?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20terapia%20nutricional%20em%20oncologia%20(paciente%2Ffamiliar)."
+             target="_blank" rel="noreferrer">
+            Contato clínico (WhatsApp)
+          </a>
+        </div>
 
-  <div class="mt-6 grid md:grid-cols-2 gap-4">
-    <div class="bg-white rounded-3xl border border-slate-200 p-6">
-      <h3 class="font-semibold">Fases comuns</h3>
-      <ul class="mt-3 space-y-2 text-slate-700">
-        <li>• Quimioterapia, radioterapia, imunoterapia e hormonioterapia</li>
-        <li>• Pré e pós-operatório</li>
-        <li>• Manutenção e suporte prolongado</li>
-      </ul>
-    </div>
+        <div class="mt-6 text-sm text-slate-600">
+          <p><strong>Márcia Araújo</strong> • Nutricionista • <strong>CRN:</strong> CRN-3 XXXXX</p>
+          <p>Brasil | Atendimento online</p>
+        </div>
+      </div>
 
-    <div class="bg-white rounded-3xl border border-slate-200 p-6">
-      <h3 class="font-semibold">Sintomas frequentes</h3>
-      <ul class="mt-3 space-y-2 text-slate-700">
-        <li>• Náuseas, vômitos, mucosite, alteração de paladar</li>
-        <li>• Disfagia, inapetência e redução da ingestão</li>
-        <li>• Diarreia, constipação e desconfortos gastrointestinais</li>
-      </ul>
-    </div>
-  </div>
-</section>
+      <!-- Card lateral com escopo clínico -->
+      <div class="bg-white rounded-3xl border border-slate-200 p-7 shadow-sm">
+        <h2 class="text-xl font-semibold tracking-tight">Focos do acompanhamento</h2>
 
-<!-- COMO FUNCIONA -->
-<section id="como-funciona" class="py-12">
-  <h2 class="text-2xl font-semibold tracking-tight">Como funciona</h2>
-  <div class="mt-6 grid md:grid-cols-4 gap-4">
-    <div class="bg-white rounded-3xl border border-slate-200 p-6">
-      <p class="text-sm font-semibold text-slate-600">Passo 1</p>
-      <p class="mt-2 font-semibold">Triagem inicial</p>
-      <p class="mt-2 text-slate-700 text-sm leading-relaxed">Fase do tratamento, sintomas e rotina alimentar.</p>
-    </div>
-    <div class="bg-white rounded-3xl border border-slate-200 p-6">
-      <p class="text-sm font-semibold text-slate-600">Passo 2</p>
-      <p class="mt-2 font-semibold">Avaliação nutricional</p>
-      <p class="mt-2 text-slate-700 text-sm leading-relaxed">Avaliação clínica e alimentar.</p>
-    </div>
-    <div class="bg-white rounded-3xl border border-slate-200 p-6">
-      <p class="text-sm font-semibold text-slate-600">Passo 3</p>
-      <p class="mt-2 font-semibold">Conduta</p>
-      <p class="mt-2 text-slate-700 text-sm leading-relaxed">Estratégias por sintoma e fase terapêutica.</p>
-    </div>
-    <div class="bg-white rounded-3xl border border-slate-200 p-6">
-      <p class="text-sm font-semibold text-slate-600">Passo 4</p>
-      <p class="mt-2 font-semibold">Acompanhamento</p>
-      <p class="mt-2 text-slate-700 text-sm leading-relaxed">Monitoramento e ajustes contínuos.</p>
-    </div>
-  </div>
-</section>
+        <div class="mt-4 space-y-4 text-slate-700">
+          <div>
+            <p class="font-semibold">Manejo por sintomas</p>
+            <p class="text-sm leading-relaxed">
+              Estratégias para sintomas que impactam alimentação: náuseas/vômitos, mucosite, disfagia,
+              alteração de paladar/olfato, diarreia/constipação, saciedade precoce, dor à deglutição.
+            </p>
+          </div>
 
-<!-- SERVIÇOS -->
-<section id="servicos" class="py-12">
-  <h2 class="text-2xl font-semibold tracking-tight">Serviços</h2>
-  <div class="mt-6 grid md:grid-cols-3 gap-4">
-    <div class="bg-white rounded-3xl border border-slate-200 p-6">
-      <h3 class="font-semibold">Consulta nutricional</h3>
-      <p class="mt-2 text-sm text-slate-700 leading-relaxed">
-        Avaliação individualizada e definição de conduta nutricional.
+          <div>
+            <p class="font-semibold">Adequação da ingestão</p>
+            <p class="text-sm leading-relaxed">
+              Ajustes de consistência, volume, fracionamento, temperatura dos alimentos, densidade energética/proteica
+              e organização do dia alimentar conforme tolerância.
+            </p>
+          </div>
+
+          <div>
+            <p class="font-semibold">Suplementos e condutas</p>
+            <p class="text-sm leading-relaxed">
+              Orientação sobre suplementos apenas quando clinicamente indicado, considerando ingestão, sintomas, exames e segurança.
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-5 text-xs text-slate-500">
+          Conteúdo informativo e conduta individualizada; não substitui acompanhamento médico.
+        </p>
+      </div>
+    </section>
+
+    <!-- PARA QUEM É -->
+    <section id="para-quem" class="py-12">
+      <h2 class="text-2xl font-semibold tracking-tight">Para quem é</h2>
+      <p class="mt-3 text-slate-700 leading-relaxed max-w-3xl">
+        Indicado para pacientes em tratamento oncológico, em recuperação ou em suporte prolongado, e também para familiares/cuidadores
+        que participam diretamente do cuidado alimentar. O acompanhamento respeita o contexto clínico e a realidade do domicílio.
       </p>
-    </div>
-    <div class="bg-white rounded-3xl border border-slate-200 p-6">
-      <h3 class="font-semibold">Acompanhamento 30 dias</h3>
-      <p class="mt-2 text-sm text-slate-700 leading-relaxed">
-        Ajustes de conduta conforme sintomas e evolução clínica.
+
+      <div class="mt-6 grid md:grid-cols-2 gap-4">
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+          <h3 class="font-semibold">Fases acompanhadas</h3>
+          <ul class="mt-3 space-y-2 text-slate-700">
+            <li>• Tratamentos sistêmicos e radioterapia</li>
+            <li>• Pré e pós-operatório</li>
+            <li>• Reabilitação nutricional e manutenção</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+          <h3 class="font-semibold">Situações frequentes</h3>
+          <ul class="mt-3 space-y-2 text-slate-700">
+            <li>• Queda de ingestão e perda de peso</li>
+            <li>• Dificuldade para mastigar/deglutir</li>
+            <li>• Sintomas gastrointestinais e fadiga</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como-funciona" class="py-12">
+      <h2 class="text-2xl font-semibold tracking-tight">Como funciona</h2>
+      <p class="mt-3 text-slate-700 leading-relaxed max-w-3xl">
+        O processo é estruturado para levantar necessidades clínicas e traduzir em condutas práticas, com reavaliação e ajustes conforme evolução.
       </p>
-    </div>
-    <div class="bg-white rounded-3xl border border-slate-200 p-6">
-      <h3 class="font-semibold">Acompanhamento 90 dias</h3>
-      <p class="mt-2 text-sm text-slate-700 leading-relaxed">
-        Seguimento contínuo ao longo do tratamento.
+
+      <div class="mt-6 grid md:grid-cols-4 gap-4">
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+          <p class="text-sm font-semibold text-slate-600">Etapa 1</p>
+          <p class="mt-2 font-semibold">Triagem</p>
+          <p class="mt-2 text-sm text-slate-700 leading-relaxed">Fase terapêutica, sintomas, rotina, exames e queixas alimentares.</p>
+        </div>
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+          <p class="text-sm font-semibold text-slate-600">Etapa 2</p>
+          <p class="mt-2 font-semibold">Avaliação</p>
+          <p class="mt-2 text-sm text-slate-700 leading-relaxed">História clínica/alimentar e definição de prioridades do momento.</p>
+        </div>
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+          <p class="text-sm font-semibold text-slate-600">Etapa 3</p>
+          <p class="mt-2 font-semibold">Conduta</p>
+          <p class="mt-2 text-sm text-slate-700 leading-relaxed">Estratégias por sintoma, consistências e plano viável no dia a dia.</p>
+        </div>
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+          <p class="text-sm font-semibold text-slate-600">Etapa 4</p>
+          <p class="mt-2 font-semibold">Ajustes</p>
+          <p class="mt-2 text-sm text-slate-700 leading-relaxed">Revisão conforme tolerância, evolução clínica e mudanças no tratamento.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATUAÇÃO CLÍNICA (mais conteúdo, sem “venda”) -->
+    <section id="atuacao" class="py-12">
+      <h2 class="text-2xl font-semibold tracking-tight">Atuação clínica</h2>
+      <p class="mt-3 text-slate-700 leading-relaxed max-w-3xl">
+        A terapia nutricional em oncologia envolve decisões que variam com o momento do tratamento. O acompanhamento prioriza segurança,
+        tolerância e consistência, com registro do que funciona e do que precisa ser evitado em cada fase.
       </p>
+
+      <div class="mt-6 grid md:grid-cols-3 gap-4">
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+          <h3 class="font-semibold">Condutas por sintoma</h3>
+          <p class="mt-2 text-sm text-slate-700 leading-relaxed">
+            Ajustes de textura, temperatura, odor, fracionamento e densidade energética/proteica de acordo com o sintoma predominante.
+          </p>
+        </div>
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+          <h3 class="font-semibold">Suporte à família</h3>
+          <p class="mt-2 text-sm text-slate-700 leading-relaxed">
+            Orientações para preparo, armazenamento, escolhas alimentares e adaptação de receitas quando o cuidador participa da rotina.
+          </p>
+        </div>
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+          <h3 class="font-semibold">Monitoramento</h3>
+          <p class="mt-2 text-sm text-slate-700 leading-relaxed">
+            Acompanhamento para reavaliar ingestão, evolução, sintomas e necessidade de ajustes (incluindo suplementação quando indicada).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="py-12">
+      <h2 class="text-2xl font-semibold tracking-tight">Serviços</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-4">
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+          <h3 class="font-semibold">Consulta nutricional</h3>
+          <p class="mt-2 text-sm text-slate-700 leading-relaxed">
+            Avaliação clínica e alimentar, com definição de condutas e estratégias por sintoma para o período atual do tratamento.
+          </p>
+          <p class="mt-4 text-sm text-slate-600">Duração típica: 60–75 min</p>
+        </div>
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+          <h3 class="font-semibold">Acompanhamento 30 dias</h3>
+          <p class="mt-2 text-sm text-slate-700 leading-relaxed">
+            Seguimento para ajustes de conduta conforme tolerância, sintomas e mudanças terapêuticas ao longo do mês.
+          </p>
+          <p class="mt-4 text-sm text-slate-600">Indicado para fase ativa do tratamento</p>
+        </div>
+        <div class="bg-white rounded-3xl border border-slate-200 p-6">
+          <h3 class="font-semibold">Acompanhamento 90 dias</h3>
+          <p class="mt-2 text-sm text-slate-700 leading-relaxed">
+            Monitoramento mais longitudinal para ciclos terapêuticos, manutenção e reorganização de rotina alimentar.
+          </p>
+          <p class="mt-4 text-sm text-slate-600">Indicado para ciclos e suporte prolongado</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-12">
+      <h2 class="text-2xl font-semibold tracking-tight">Perguntas frequentes</h2>
+      <div class="mt-6 space-y-4">
+        <details class="bg-white rounded-3xl border border-slate-200 p-6">
+          <summary class="font-semibold cursor-pointer">Você atende durante quimioterapia?</summary>
+          <p class="mt-3 text-slate-700 text-sm leading-relaxed">
+            Sim. A conduta é ajustada à fase do tratamento e aos sintomas atuais, priorizando tolerância, ingestão possível e segurança.
+          </p>
+        </details>
+        <details class="bg-white rounded-3xl border border-slate-200 p-6">
+          <summary class="font-semibold cursor-pointer">Suplementos são sempre necessários?</summary>
+          <p class="mt-3 text-slate-700 text-sm leading-relaxed">
+            Não. A indicação é individual e depende da ingestão, sintomas, exames e tolerância. Quando indicados, são orientados com critério.
+          </p>
+        </details>
+        <details class="bg-white rounded-3xl border border-slate-200 p-6">
+          <summary class="font-semibold cursor-pointer">O atendimento online funciona bem?</summary>
+          <p class="mt-3 text-slate-700 text-sm leading-relaxed">
+            Sim. É adequado para triagem, avaliação, orientações por sintoma e ajustes de rotina, com acompanhamento da evolução.
+          </p>
+        </details>
+        <details class="bg-white rounded-3xl border border-slate-200 p-6">
+          <summary class="font-semibold cursor-pointer">Familiares podem participar?</summary>
+          <p class="mt-3 text-slate-700 text-sm leading-relaxed">
+            Sim. Em muitos casos a família/cuidador é parte importante do preparo e da organização alimentar, especialmente em fases de baixa tolerância.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="py-12 mb-10">
+      <div class="bg-white rounded-3xl border border-slate-200 p-8">
+        <h2 class="text-2xl font-semibold tracking-tight">Contato e agendamento</h2>
+        <p class="mt-3 text-slate-700 leading-relaxed">
+          Para solicitar agendamento ou orientações iniciais sobre o acompanhamento em terapia nutricional, utilize um dos canais abaixo.
+        </p>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a class="px-5 py-3 rounded-2xl bg-slate-900 text-white font-semibold text-center"
+             href="https://wa.me/5511981619625?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20agendamento%20em%20terapia%20nutricional%20em%20oncologia."
+             target="_blank" rel="noreferrer">
+            WhatsApp (contato clínico)
+          </a>
+
+          <a class="px-5 py-3 rounded-2xl bg-white border border-slate-300 font-semibold text-center"
+             href="mailto:PREENCHA_SEU_EMAIL_AQUI">
+            E-mail
+          </a>
+        </div>
+
+        <p class="mt-4 text-xs text-slate-500">
+          <strong>CRN:</strong> CRN-3 XXXXX • Conteúdo informativo; não substitui avaliação e conduta médica.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (logo institucional maior também) -->
+  <footer class="border-t border-slate-200 py-8">
+    <div class="max-w-6xl mx-auto px-4 text-sm text-slate-600 flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
+      <div class="flex items-center gap-3">
+        <img
+          src="./logo-clinica.png"
+          alt="Márcia Araújo – Terapia Nutricional em Oncologia"
+          class="h-14 w-auto opacity-80"
+          loading="lazy"
+        />
+        <p>© <span id="y"></span> Márcia Araújo • Terapia Nutricional em Oncologia</p>
+      </div>
+      <p><a class="hover:underline" href="#inicio">Voltar ao topo</a></p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- CONTATO -->
-<section id="contato" class="py-12 mb-10">
-  <div class="bg-white rounded-3xl border border-slate-200 p-8">
-    <h2 class="text-2xl font-semibold tracking-tight">Contato e agendamento</h2>
-    <p class="mt-3 text-slate-700 leading-relaxed">
-      Para agendamento da consulta ou orientações iniciais,
-      utilize o canal abaixo.
-    </p>
+  <!-- WhatsApp flutuante -->
+  <a class="wa-float"
+     href="https://wa.me/5511981619625?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20agendamento%20em%20terapia%20nutricional%20em%20oncologia."
+     target="_blank" rel="noreferrer" aria-label="Contato via WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.39c-.27-.14-1.58-.78-1.83-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.34-.81-.72-1.36-1.6-1.52-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3s.99 2.67 1.13 2.85c.14.18 1.95 2.98 4.73 4.18.66.28 1.17.45 1.57.58.66.21 1.26.18 1.73.11.53-.08 1.58-.65 1.8-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.02 3C9.39 3 4 8.39 4 15.02c0 2.12.56 4.19 1.62 6.01L4 29l8.2-1.56c1.76.96 3.74 1.47 5.82 1.47 6.63 0 12.02-5.39 12.02-12.02C30.04 8.39 22.65 3 16.02 3zm0 23.04c-1.89 0-3.65-.52-5.18-1.42l-.37-.22-4.86.93.93-4.74-.24-.39c-1-1.6-1.53-3.44-1.53-5.32C5.77 9.48 10.48 4.77 16.02 4.77s10.25 4.71 10.25 10.25-4.71 10.25-10.25 10.25z"/>
+    </svg>
+  </a>
 
-    <div class="mt-6">
-      <a href="https://wa.me/5511981619625"
-         class="inline-block px-6 py-3 rounded-2xl bg-slate-900 text-white font-semibold">
-        Contato via WhatsApp
-      </a>
-    </div>
-
-    <p class="mt-4 text-xs text-slate-500">
-      CRN: PREENCHA_AQUI • Conteúdo informativo; não substitui avaliação médica.
-    </p>
-  </div>
-</section>
-
-</main>
-
-<!-- FOOTER -->
-<footer class="border-t border-slate-200 py-8">
-  <div class="max-w-6xl mx-auto px-4 text-sm text-slate-600 flex items-center gap-3">
-    <img src="./logo-clinica.png"
-         alt="Márcia Araújo – Nutrição Oncológica"
-         class="h-10 w-auto opacity-80"
-         loading="lazy">
-    <p>© <span id="y"></span> Márcia Araújo • Terapia Nutricional em Oncologia</p>
-  </div>
-</footer>
-
-<!-- WhatsApp flutuante -->
-<a class="wa-float"
-   href="https://wa.me/5511981619625"
-   target="_blank"
-   aria-label="Contato para acompanhamento nutricional">
-  <svg viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M16.02 3C9.39 3 4 8.39 4 15.02c0 2.12.56 4.19 1.62 6.01L4 29l8.2-1.56c1.76.96 3.74 1.47 5.82 1.47 6.63 0 12.02-5.39 12.02-12.02C30.04 8.39 22.65 3 16.02 3z"/>
-  </svg>
-</a>
-
-<script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
-
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
