@@ -4,11 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Márcia Araújo | Terapia Nutricional em Oncologia</title>
-  <meta name="description" content="Terapia nutricional no tratamento oncológico. Atendimento online para pacientes e familiares, com manejo alimentar individualizado e condutas alinhadas à fase terapêutica e sintomas." />
+
+  <meta name="description" content="Terapia nutricional no tratamento oncológico. Atendimento online para pacientes e familiares, com manejo alimentar individualizado e condutas compatíveis com a fase terapêutica e sintomas." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0f172a" />
 
-  <!-- Tipografia (clínica / institucional) -->
+  <!-- Tipografia institucional -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
@@ -45,43 +46,67 @@
 </head>
 
 <body class="bg-slate-50 text-slate-900 antialiased">
-  <!-- HEADER -->
-  <header class="sticky top-0 bg-white/90 backdrop-blur border-b border-slate-200 z-50">
-    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between min-h-[96px]">
-      <a href="#inicio" class="flex items-center gap-4">
-        <!-- Logo maior e bem equilibrado -->
-        <img
-          src="./logo-clinica.png"
-          alt="Márcia Araújo – Terapia Nutricional em Oncologia"
-          class="h-16 sm:h-20 md:h-24 w-auto"
-          loading="lazy"
-        />
-        <div class="leading-tight hidden sm:block">
-          <p class="text-base font-semibold text-slate-900">Márcia Araújo</p>
-          <p class="text-sm text-slate-600">Terapia Nutricional em Oncologia</p>
-          <p class="text-xs text-slate-500">Brasil | Atendimento online • pacientes e familiares</p>
-        </div>
-      </a>
 
-      <div class="hidden md:flex gap-6 text-sm text-slate-700">
+  <!-- HEADER (corrigido: logo maior, sem sobreposição, menu responsivo) -->
+  <header class="sticky top-0 bg-white/90 backdrop-blur border-b border-slate-200 z-50">
+    <nav class="max-w-6xl mx-auto px-4 py-3">
+      <div class="flex items-center justify-between gap-4">
+
+        <!-- BRAND -->
+        <a href="#inicio" class="flex items-center gap-4 min-w-0">
+          <img
+            src="./logo-clinica.png"
+            alt="Márcia Araújo – Terapia Nutricional em Oncologia"
+            class="h-16 sm:h-20 lg:h-24 w-auto shrink-0"
+            loading="lazy"
+          />
+
+          <div class="min-w-0 leading-tight">
+            <p class="text-base sm:text-lg font-semibold text-slate-900 truncate">Márcia Araújo</p>
+            <p class="text-sm sm:text-base text-slate-600 truncate">Terapia Nutricional em Oncologia</p>
+            <p class="hidden lg:block text-xs text-slate-500 truncate">
+              Brasil | Atendimento online • pacientes e familiares
+            </p>
+          </div>
+        </a>
+
+        <!-- MENU desktop (lg+) -->
+        <div class="hidden lg:flex items-center gap-6 text-sm text-slate-700 whitespace-nowrap">
+          <a href="#sobre" class="hover:underline">Sobre</a>
+          <a href="#para-quem" class="hover:underline">Para quem</a>
+          <a href="#como-funciona" class="hover:underline">Como funciona</a>
+          <a href="#atuacao" class="hover:underline">Atuação</a>
+          <a href="./servicos.html" class="hover:underline">Serviços</a>
+          <a href="#faq" class="hover:underline">FAQ</a>
+          <a href="#contato" class="hover:underline">Contato</a>
+        </div>
+
+        <!-- CTA -->
+        <a
+          href="#contato"
+          class="shrink-0 text-sm font-semibold px-4 py-2 rounded-xl bg-slate-900 text-white whitespace-nowrap"
+        >
+          Solicitar agendamento
+        </a>
+      </div>
+
+      <!-- MENU compacto para telas médias (md a lg-1) -->
+      <div class="hidden md:flex lg:hidden mt-3 items-center gap-5 text-sm text-slate-700 flex-wrap">
         <a href="#sobre" class="hover:underline">Sobre</a>
-        <a href="#para-quem" class="hover:underline">Para quem é</a>
+        <a href="#para-quem" class="hover:underline">Para quem</a>
         <a href="#como-funciona" class="hover:underline">Como funciona</a>
-        <a href="#atuacao" class="hover:underline">Atuação clínica</a>
+        <a href="#atuacao" class="hover:underline">Atuação</a>
         <a href="./servicos.html" class="hover:underline">Serviços</a>
         <a href="#faq" class="hover:underline">FAQ</a>
         <a href="#contato" class="hover:underline">Contato</a>
       </div>
-
-      <a href="#contato" class="text-sm font-semibold px-4 py-2 rounded-xl bg-slate-900 text-white">
-        Solicitar agendamento
-      </a>
     </nav>
   </header>
 
   <main id="inicio" class="max-w-6xl mx-auto px-4">
+
     <!-- HERO -->
-    <section class="py-14 grid md:grid-cols-2 gap-10 items-center">
+    <section class="py-14 grid lg:grid-cols-2 gap-10 items-center">
       <div>
         <p class="text-sm font-semibold text-slate-600">
           Terapia nutricional em oncologia • atendimento online
@@ -99,8 +124,8 @@
         </p>
 
         <p class="mt-4 text-slate-700 leading-relaxed">
-          O plano é construído de forma prática, considerando rotina, preferências e limitações do momento, com orientação de segurança alimentar
-          e sem promessas de resultado.
+          A conduta é construída de forma prática, considerando rotina, preferências e limitações do momento,
+          com orientações de segurança e sem promessas de resultado.
         </p>
 
         <div class="mt-7 flex flex-col sm:flex-row gap-3">
@@ -128,7 +153,7 @@
             <p class="font-semibold">Manejo por sintomas</p>
             <p class="text-sm leading-relaxed">
               Estratégias para náuseas/vômitos, mucosite, disfagia, alteração de paladar/olfato, diarreia/constipação,
-              saciedade precoce e dor à deglutição.
+              saciedade precoce e desconforto ao se alimentar.
             </p>
           </div>
 
@@ -142,7 +167,7 @@
           <div>
             <p class="font-semibold">Suplementos e condutas</p>
             <p class="text-sm leading-relaxed">
-              Orientação sobre suplementos apenas quando clinicamente indicado, considerando ingestão, sintomas, exames e segurança.
+              Orientação sobre suplementos somente quando clinicamente indicado, considerando ingestão, sintomas, exames e segurança.
             </p>
           </div>
         </div>
@@ -153,12 +178,12 @@
       </div>
     </section>
 
-    <!-- SOBRE (refeito para foto maior no mobile e alinhamento profissional) -->
+    <!-- SOBRE -->
     <section id="sobre" class="py-12">
       <div class="bg-white rounded-3xl border border-slate-200 p-7 sm:p-8">
-        <div class="grid md:grid-cols-12 gap-8 items-start">
-          <!-- FOTO -->
-          <div class="md:col-span-5 order-1">
+        <div class="grid lg:grid-cols-12 gap-8 items-start">
+          <!-- FOTO (retrato; maior no mobile) -->
+          <div class="lg:col-span-5">
             <div class="rounded-3xl border border-slate-200 bg-slate-50 p-4">
               <img
                 src="./foto.jpeg"
@@ -167,13 +192,13 @@
                 loading="lazy"
               />
               <p class="mt-3 text-xs text-slate-500 leading-relaxed">
-                Sugestão: foto com fundo neutro e boa iluminação. (Se precisar, posso te orientar a exportar do Canva no tamanho ideal.)
+                Foto profissional em retrato, com fundo neutro e boa iluminação, favorece confiança e clareza.
               </p>
             </div>
           </div>
 
           <!-- TEXTO -->
-          <div class="md:col-span-7 order-2">
+          <div class="lg:col-span-7">
             <p class="text-sm font-semibold text-slate-600">Sobre a Nutricionista</p>
             <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-tight">Sobre Márcia Araújo</h2>
 
@@ -272,7 +297,8 @@
       <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-tight">Como funciona</h2>
 
       <p class="mt-4 text-slate-700 leading-relaxed max-w-3xl">
-        O processo é estruturado para levantar necessidades clínicas e traduzir em condutas práticas, com reavaliação e ajustes conforme evolução.
+        O processo é estruturado para levantar necessidades clínicas e traduzir em condutas práticas,
+        com reavaliação e ajustes conforme evolução e fase do tratamento.
       </p>
 
       <div class="mt-6 grid md:grid-cols-4 gap-4">
@@ -299,14 +325,14 @@
       </div>
     </section>
 
-    <!-- ATUAÇÃO CLÍNICA -->
+    <!-- ATUAÇÃO -->
     <section id="atuacao" class="py-12">
       <p class="text-sm font-semibold text-slate-600">Escopo clínico</p>
       <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-tight">Atuação clínica</h2>
 
       <p class="mt-4 text-slate-700 leading-relaxed max-w-3xl">
         A terapia nutricional em oncologia envolve decisões que variam com o momento do tratamento. O acompanhamento prioriza segurança,
-        tolerância e consistência, com registro do que funciona e do que precisa ser evitado em cada fase.
+        tolerância e constância, com registro do que funciona e do que precisa ser ajustado em cada fase.
       </p>
 
       <div class="mt-6 grid md:grid-cols-3 gap-4">
@@ -327,20 +353,20 @@
         <div class="bg-white rounded-3xl border border-slate-200 p-6">
           <h3 class="font-semibold text-lg">Monitoramento</h3>
           <p class="mt-2 text-sm text-slate-700 leading-relaxed">
-            Reavaliação da ingestão, sintomas e necessidade de ajustes (incluindo suplementação quando indicada).
+            Reavaliação de ingestão, sintomas e necessidade de ajustes (incluindo suplementação quando indicada).
           </p>
         </div>
       </div>
     </section>
 
-    <!-- RESUMO DE SERVIÇOS NA HOME -->
+    <!-- SERVIÇOS (resumo + link) -->
     <section class="py-12">
       <div class="bg-white rounded-3xl border border-slate-200 p-8">
         <p class="text-sm font-semibold text-slate-600">Serviços</p>
         <h2 class="mt-2 text-3xl sm:text-4xl font-semibold tracking-tight">Serviços</h2>
         <p class="mt-4 text-slate-700 leading-relaxed max-w-3xl">
-          Para manter a página inicial mais objetiva, os detalhes do atendimento (consulta inicial, retorno, acompanhamento por fase/ciclo
-          e estrutura do atendimento online) estão em uma página dedicada.
+          Os detalhes do atendimento (consulta inicial, retornos e acompanhamentos por fase/ciclo) estão em uma página dedicada,
+          para manter a navegação mais clara, especialmente no celular.
         </p>
         <div class="mt-6 flex flex-col sm:flex-row gap-3">
           <a href="./servicos.html" class="px-6 py-3 rounded-2xl bg-slate-900 text-white font-semibold text-center">
@@ -415,6 +441,7 @@
         </p>
       </div>
     </section>
+
   </main>
 
   <!-- FOOTER -->
