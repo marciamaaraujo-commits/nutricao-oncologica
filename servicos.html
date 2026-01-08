@@ -5,71 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Serviços | Terapia Nutricional em Oncologia</title>
 
-  <meta name="description" content="Serviços de terapia nutricional em oncologia. Consulta online, acompanhamento por fase do tratamento e manejo alimentar individualizado." />
+  <meta name="description" content="Serviços de terapia nutricional em oncologia: consulta inicial, acompanhamento e manejo alimentar por sintomas. Atendimento online." />
   <meta name="robots" content="index,follow" />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="theme-color" content="#006064" />
 
-  <!-- Tipografia institucional -->
+  <!-- Fonte sem serifa -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     :root{
-      --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      --font-serif: "Source Serif 4", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      --petrol: #006064;
+      --coral: #FF8A65;
+      --mint:  #E0F2F1;
+      --graph: #37474F;
+      --border:#D7E6E5;
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
-    body{ font-family: var(--font-sans); }
-    h1, h2, h3{ font-family: var(--font-serif); letter-spacing: -0.01em; }
+    body{ font-family: var(--font); color: var(--graph); background: #fff; }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:.85rem 1.1rem; border-radius:1rem; font-weight:700;
+      border:1px solid transparent; text-decoration:none; line-height:1.1;
+      transition: filter .15s ease, transform .05s ease;
+    }
+    .btn:active{ transform: translateY(1px); }
+
+    .btn-cta{ background: var(--coral); color:#fff; box-shadow:0 10px 20px rgba(255,138,101,.22); }
+    .btn-cta:hover{ filter: brightness(.98); }
+
+    .btn-soft{ background:#fff; border-color: var(--border); color: var(--petrol); }
+    .btn-soft:hover{ filter: brightness(.99); }
+
+    .title{ color: var(--petrol); letter-spacing: -0.02em; }
+    .card{ background:#fff; border:1px solid var(--border); border-radius:1.5rem; }
+    .soft-section{ background: var(--mint); border:1px solid var(--border); border-radius:1.75rem; }
+
+    :focus-visible{ outline: 3px solid rgba(0,96,100,.25); outline-offset: 2px; border-radius: 12px; }
   </style>
 </head>
 
-<body class="bg-slate-50 text-slate-900 antialiased">
+<body class="antialiased">
 
-  <!-- HEADER (igual ao index, com links corretos) -->
-  <header class="sticky top-0 bg-white/90 backdrop-blur border-b border-slate-200 z-50">
+  <!-- HEADER -->
+  <header class="sticky top-0 bg-white/92 backdrop-blur border-b" style="border-color: var(--border); z-index: 50;">
     <nav class="max-w-6xl mx-auto px-4 py-3">
       <div class="flex items-center justify-between gap-4">
-
         <a href="./index.html" class="flex items-center gap-4 min-w-0">
-          <img
-            src="./logo-clinica.png"
-            alt="Márcia Araújo – Terapia Nutricional em Oncologia"
-            class="h-16 sm:h-20 lg:h-24 w-auto shrink-0"
-            loading="lazy"
-          />
+          <img src="./logo-clinica.png" alt="Márcia Araújo – Terapia Nutricional em Oncologia"
+               class="h-16 sm:h-20 lg:h-24 w-auto shrink-0" loading="lazy" />
           <div class="min-w-0 leading-tight">
-            <p class="text-base sm:text-lg font-semibold text-slate-900 truncate">Márcia Araújo</p>
-            <p class="text-sm sm:text-base text-slate-600 truncate">Terapia Nutricional em Oncologia</p>
-            <p class="hidden lg:block text-xs text-slate-500 truncate">
-              Brasil | Atendimento online • pacientes e familiares
-            </p>
+            <p class="text-base sm:text-lg font-semibold truncate title">Márcia Araújo</p>
+            <p class="text-sm sm:text-base truncate" style="color: var(--graph);">Terapia Nutricional em Oncologia</p>
           </div>
         </a>
 
-        <div class="hidden lg:flex items-center gap-6 text-sm text-slate-700 whitespace-nowrap">
+        <div class="hidden lg:flex items-center gap-6 text-sm whitespace-nowrap" style="color: var(--graph);">
           <a href="./index.html#sobre" class="hover:underline">Sobre</a>
+          <a href="./index.html#indicacoes" class="hover:underline">Indicações</a>
           <a href="./index.html#como-funciona" class="hover:underline">Como funciona</a>
-          <a href="./servicos.html" class="font-semibold underline">Serviços</a>
-          <a href="./index.html#faq" class="hover:underline">FAQ</a>
+          <a href="./servicos.html" class="font-semibold underline title">Serviços</a>
           <a href="./index.html#contato" class="hover:underline">Contato</a>
         </div>
 
-        <a
-          href="./index.html#contato"
-          class="shrink-0 text-sm font-semibold px-4 py-2 rounded-xl bg-slate-900 text-white whitespace-nowrap"
-        >
-          Solicitar agendamento
+        <a href="./index.html#contato" class="btn btn-cta shrink-0 whitespace-nowrap">
+          Agendar consulta
         </a>
       </div>
 
-      <div class="hidden md:flex lg:hidden mt-3 items-center gap-5 text-sm text-slate-700 flex-wrap">
+      <div class="hidden md:flex lg:hidden mt-3 items-center gap-5 text-sm flex-wrap" style="color: var(--graph);">
         <a href="./index.html#sobre" class="hover:underline">Sobre</a>
+        <a href="./index.html#indicacoes" class="hover:underline">Indicações</a>
         <a href="./index.html#como-funciona" class="hover:underline">Como funciona</a>
-        <a href="./servicos.html" class="font-semibold underline">Serviços</a>
-        <a href="./index.html#faq" class="hover:underline">FAQ</a>
+        <a href="./servicos.html" class="font-semibold underline title">Serviços</a>
         <a href="./index.html#contato" class="hover:underline">Contato</a>
       </div>
     </nav>
@@ -80,210 +92,125 @@
     <!-- INTRO -->
     <section class="py-14">
       <div class="max-w-3xl">
-        <p class="text-sm font-semibold text-slate-600">Atendimento clínico</p>
-        <h1 class="mt-2 text-4xl sm:text-5xl font-semibold tracking-tight">
+        <p class="text-sm font-semibold title">Serviços</p>
+        <h1 class="mt-2 text-4xl sm:text-5xl font-semibold title">
           Serviços em Terapia Nutricional Oncológica
         </h1>
-
-        <p class="mt-5 text-slate-700 leading-relaxed">
-          Os serviços são estruturados para oferecer <strong>terapia nutricional individualizada</strong>,
-          considerando fase do tratamento, sintomas, tolerância alimentar e contexto de vida do paciente.
-          O atendimento é realizado de forma online, com escuta qualificada e acompanhamento contínuo.
-        </p>
-
-        <p class="mt-4 text-slate-700 leading-relaxed">
-          Abaixo estão descritas as modalidades e o que está contemplado em cada etapa. Em caso de dúvidas sobre qual formato
-          se adapta melhor ao seu momento, podemos orientar na triagem inicial.
+        <p class="mt-5 leading-relaxed" style="color: var(--graph);">
+          O atendimento é estruturado para manejo alimentar por sintomas, adequação da ingestão e orientações seguras
+          compatíveis com a fase do tratamento. Abaixo, as modalidades e o que está contemplado em cada uma.
         </p>
       </div>
     </section>
 
-    <!-- ACORDEÕES -->
+    <!-- ACORDEÕES (limpo no celular) -->
     <section class="pb-14 space-y-5">
 
-      <!-- Consulta inicial -->
-      <details class="bg-white rounded-3xl border border-slate-200 p-6" open>
-        <summary class="cursor-pointer text-xl font-semibold">
-          Consulta nutricional inicial
-        </summary>
-
-        <div class="mt-4 text-slate-700 leading-relaxed space-y-4">
+      <details class="card p-6" open>
+        <summary class="cursor-pointer text-xl font-semibold title">Consulta nutricional inicial</summary>
+        <div class="mt-4 space-y-4" style="color: var(--graph);">
           <p>
-            A consulta inicial é voltada à compreensão do quadro clínico, do tratamento em curso e das principais dificuldades relacionadas à alimentação.
-            A partir disso, definimos prioridades e iniciamos o manejo alimentar de forma segura e aplicável.
+            Consulta voltada à avaliação clínica e alimentar, identificando prioridades do momento e iniciando condutas aplicáveis à rotina.
           </p>
-
-          <div class="grid md:grid-cols-2 gap-4">
-            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-              <p class="font-semibold text-slate-900">O que é avaliado</p>
-              <ul class="mt-3 list-disc pl-6 space-y-2 text-sm">
-                <li>Fase do tratamento e sintomas atuais</li>
-                <li>Rotina alimentar, apetite e tolerância</li>
-                <li>Consistências e dificuldade de mastigar/deglutir</li>
-                <li>Histórico de peso e ingestão possível</li>
-              </ul>
-            </div>
-
-            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-              <p class="font-semibold text-slate-900">O que você recebe</p>
-              <ul class="mt-3 list-disc pl-6 space-y-2 text-sm">
-                <li>Orientações práticas por sintoma</li>
-                <li>Ajustes de consistência e fracionamento</li>
-                <li>Plano alimentar compatível com tolerância</li>
-                <li>Critérios para monitorar e ajustar</li>
-              </ul>
-            </div>
-          </div>
-
-          <p class="text-sm text-slate-500">
-            Duração média: 60–75 minutos (online).
-          </p>
-        </div>
-      </details>
-
-      <!-- Manejo de sintomas -->
-      <details class="bg-white rounded-3xl border border-slate-200 p-6">
-        <summary class="cursor-pointer text-xl font-semibold">
-          Manejo alimentar por sintomas (durante o tratamento)
-        </summary>
-
-        <div class="mt-4 text-slate-700 leading-relaxed space-y-4">
-          <p>
-            Em fases de maior impacto, o objetivo é reduzir desconfortos e manter a ingestão possível com segurança,
-            ajustando a alimentação conforme o sintoma predominante e a tolerância.
-          </p>
-
           <ul class="list-disc pl-6 space-y-2">
-            <li>Náuseas/vômitos: estratégias de fracionamento, temperatura e gatilhos alimentares</li>
-            <li>Mucosite/disfagia: consistências seguras, densidade nutricional e conforto ao deglutir</li>
-            <li>Alteração de paladar/olfato: ajustes de aromas, temperos e proteínas melhor toleradas</li>
-            <li>Diarreia/constipação: adequação de fibras, hidratação e escolhas de melhor tolerância</li>
-            <li>Saciedade precoce: densidade energética/proteica e volume adequado</li>
+            <li>Triagem da fase do tratamento, sintomas e tolerância alimentar</li>
+            <li>Avaliação de ingestão, hidratação, consistências e desconfortos ao comer</li>
+            <li>Análise de exames e medicações (quando disponíveis)</li>
+            <li>Estratégias por sintoma + plano compatível com a tolerância</li>
           </ul>
-
-          <p class="text-sm text-slate-500">
-            As condutas são individualizadas e revisadas conforme a evolução do tratamento e sintomas.
-          </p>
+          <p class="text-sm" style="color:#54636A;">Duração média: 60–75 minutos (online).</p>
         </div>
       </details>
 
-      <!-- Acompanhamento 30 dias -->
-      <details class="bg-white rounded-3xl border border-slate-200 p-6">
-        <summary class="cursor-pointer text-xl font-semibold">
-          Acompanhamento – 30 dias
-        </summary>
-
-        <div class="mt-4 text-slate-700 leading-relaxed space-y-4">
+      <details class="card p-6">
+        <summary class="cursor-pointer text-xl font-semibold title">Manejo alimentar por sintomas</summary>
+        <div class="mt-4 space-y-4" style="color: var(--graph);">
           <p>
-            Indicado para fase ativa do tratamento, quando sintomas variam com frequência e a dieta precisa de ajustes mais próximos.
+            Estratégias específicas para reduzir desconfortos e facilitar a alimentação, com ajustes progressivos conforme tolerância.
           </p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Náuseas/vômitos: fracionamento, temperatura e escolhas de melhor tolerância</li>
+            <li>Mucosite/disfagia: consistências seguras e maior conforto ao deglutir</li>
+            <li>Alteração de paladar/olfato: adequações de sabores e proteínas mais toleradas</li>
+            <li>Diarreia/constipação: ajustes de fibras/hidratação e alimentos compatíveis</li>
+            <li>Saciedade precoce: densidade energética/proteica com volume adequado</li>
+          </ul>
+        </div>
+      </details>
 
+      <details class="card p-6">
+        <summary class="cursor-pointer text-xl font-semibold title">Acompanhamento – 30 dias</summary>
+        <div class="mt-4 space-y-4" style="color: var(--graph);">
+          <p>
+            Indicado quando há variação de sintomas e necessidade de ajustes mais frequentes ao longo do mês.
+          </p>
           <ul class="list-disc pl-6 space-y-2">
             <li>Consulta inicial + retorno dentro do período</li>
-            <li>Ajustes de conduta conforme sintomas e tolerância</li>
+            <li>Ajustes conforme sintomas e tolerância</li>
             <li>Readequação de consistências, volumes e fracionamento</li>
-            <li>Critérios práticos para monitoramento em casa</li>
           </ul>
-
-          <p class="text-sm text-slate-500">
-            Objetivo: manter constância no manejo e evitar quedas prolongadas de ingestão.
-          </p>
         </div>
       </details>
 
-      <!-- Acompanhamento 90 dias -->
-      <details class="bg-white rounded-3xl border border-slate-200 p-6">
-        <summary class="cursor-pointer text-xl font-semibold">
-          Acompanhamento – 90 dias
-        </summary>
-
-        <div class="mt-4 text-slate-700 leading-relaxed space-y-4">
+      <details class="card p-6">
+        <summary class="cursor-pointer text-xl font-semibold title">Acompanhamento – 90 dias</summary>
+        <div class="mt-4 space-y-4" style="color: var(--graph);">
           <p>
-            Modalidade indicada para ciclos terapêuticos mais longos, reabilitação nutricional ou manutenção,
-            com acompanhamento longitudinal e reavaliação contínua.
+            Indicado para ciclos terapêuticos mais longos, manutenção e reabilitação nutricional, com acompanhamento longitudinal.
           </p>
-
           <ul class="list-disc pl-6 space-y-2">
-            <li>Monitoramento da ingestão e sintomas ao longo do período</li>
-            <li>Ajustes conforme mudanças no tratamento</li>
-            <li>Suporte ao paciente e à família/cuidador</li>
-            <li>Foco em preservar massa muscular e funcionalidade</li>
+            <li>Revisões e ajustes conforme evolução clínica e fase do tratamento</li>
+            <li>Organização da rotina alimentar e estratégias por fase</li>
+            <li>Apoio ao cuidador quando participa da alimentação</li>
           </ul>
-
-          <p class="text-sm text-slate-500">
-            Objetivo: continuidade do cuidado e adaptação progressiva da alimentação ao longo do tempo.
-          </p>
         </div>
       </details>
 
-      <!-- Suplementos -->
-      <details class="bg-white rounded-3xl border border-slate-200 p-6">
-        <summary class="cursor-pointer text-xl font-semibold">
-          Suplementos: quando entram na conduta
-        </summary>
-
-        <div class="mt-4 text-slate-700 leading-relaxed space-y-4">
+      <details class="card p-6">
+        <summary class="cursor-pointer text-xl font-semibold title">Suplementos: quando entram na conduta</summary>
+        <div class="mt-4 space-y-4" style="color: var(--graph);">
           <p>
-            A indicação de suplementos é sempre individual. Quando necessários, são escolhidos considerando tolerância, ingestão real,
-            sintomas, exames e segurança — evitando uso indiscriminado.
+            Suplementos são considerados quando clinicamente indicados, a partir de ingestão real, sintomas, exames e tolerância,
+            evitando uso indiscriminado.
           </p>
-
           <ul class="list-disc pl-6 space-y-2">
-            <li>Avaliação do consumo e da capacidade de manter ingestão por via oral</li>
-            <li>Escolha conforme objetivo (proteína/energia) e melhor tolerância</li>
-            <li>Orientações de uso prático (horário, volume, combinação, sintomas)</li>
+            <li>Escolha conforme objetivo (energia/proteína) e tolerância</li>
+            <li>Orientações de uso prático (horário, volume, combinações)</li>
+            <li>Reavaliação contínua para ajustes</li>
           </ul>
-
-          <p class="text-sm text-slate-500">
-            Observação: suplementação não substitui a dieta; é recurso terapêutico quando indicado.
-          </p>
+          <p class="text-sm" style="color:#54636A;">Observação: suplementação não substitui alimentação; é recurso terapêutico quando indicado.</p>
         </div>
       </details>
 
-      <!-- Atendimento online -->
-      <details class="bg-white rounded-3xl border border-slate-200 p-6">
-        <summary class="cursor-pointer text-xl font-semibold">
-          Como funciona o atendimento online
-        </summary>
-
-        <div class="mt-4 text-slate-700 leading-relaxed space-y-4">
+      <details class="card p-6">
+        <summary class="cursor-pointer text-xl font-semibold title">Atendimento online</summary>
+        <div class="mt-4 space-y-4" style="color: var(--graph);">
           <p>
-            O atendimento é realizado por videoconferência, em horário agendado. Esse formato permite acompanhamento próximo,
-            sem desgaste de deslocamento, e favorece ajustes mais ágeis conforme a evolução do tratamento.
+            O atendimento é realizado por videoconferência, em horário agendado. O formato online reduz barreiras de deslocamento
+            e favorece ajustes conforme sintomas e rotina, mantendo constância no cuidado.
           </p>
-
           <ul class="list-disc pl-6 space-y-2">
             <li>Consulta por vídeo em ambiente reservado</li>
-            <li>Conduta alinhada à rotina domiciliar</li>
+            <li>Orientações aplicáveis à rotina domiciliar</li>
             <li>Possibilidade de participação de familiar/cuidador</li>
-            <li>Reavaliações conforme necessidade clínica</li>
           </ul>
         </div>
       </details>
 
     </section>
 
-    <!-- CTA FINAL -->
+    <!-- CTA FINAL (coral) -->
     <section class="pb-16">
-      <div class="bg-slate-900 rounded-3xl p-8 text-white max-w-3xl">
-        <h2 class="text-2xl font-semibold">Deseja iniciar o acompanhamento?</h2>
-        <p class="mt-3 text-slate-200 leading-relaxed">
-          Para solicitar agendamento ou orientar qual formato se adapta melhor ao seu momento, utilize o contato abaixo.
+      <div class="soft-section p-8 max-w-3xl">
+        <h2 class="text-2xl font-semibold title">Agendar consulta</h2>
+        <p class="mt-3 leading-relaxed" style="color: var(--graph);">
+          Para solicitar agendamento, utilize os canais de contato na página inicial.
         </p>
-
         <div class="mt-6 flex flex-col sm:flex-row gap-3">
-          <a href="./index.html#contato"
-             class="px-6 py-3 rounded-2xl bg-white text-slate-900 font-semibold text-center">
-            Solicitar agendamento
-          </a>
-
-          <a href="./index.html"
-             class="px-6 py-3 rounded-2xl border border-white/40 font-semibold text-center">
-            Voltar para a página inicial
-          </a>
+          <a href="./index.html#contato" class="btn btn-cta">Ir para Contato</a>
+          <a href="./index.html" class="btn btn-soft">Página inicial</a>
         </div>
-
-        <p class="mt-5 text-xs text-white/70">
+        <p class="mt-5 text-xs" style="color:#54636A;">
           Conteúdo informativo; não substitui avaliação e conduta médica.
         </p>
       </div>
@@ -292,19 +219,18 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="border-t border-slate-200 py-8">
-    <div class="max-w-6xl mx-auto px-4 text-sm text-slate-600 flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
+  <footer class="border-t py-8" style="border-color: var(--border);">
+    <div class="max-w-6xl mx-auto px-4 text-sm flex flex-col md:flex-row gap-4 justify-between items-start md:items-center" style="color: var(--graph);">
       <div class="flex items-center gap-3">
         <img src="./logo-clinica.png" alt="Logo" class="h-12 sm:h-14 w-auto opacity-80" loading="lazy">
         <p>© <span id="y"></span> Márcia Araújo • Terapia Nutricional em Oncologia</p>
       </div>
-      <a href="./index.html" class="hover:underline">Página inicial</a>
+      <a href="./index.html" class="hover:underline" style="color: var(--petrol);">Voltar</a>
     </div>
   </footer>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
