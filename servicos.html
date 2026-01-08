@@ -9,7 +9,6 @@
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#006064" />
 
-  <!-- Fonte sem serifa -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,52 +18,50 @@
   <style>
     :root{
       --petrol: #006064;
-      --coral: #FF8A65;
-      --mint:  #E0F2F1;
-      --graph: #37474F;
-      --border:#D7E6E5;
+      --coral:  #FF8A65;
+      --mint:   #E0F2F1;
+      --graph:  #37474F;
+      --border: #D7E6E5;
       --font: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
-    body{ font-family: var(--font); color: var(--graph); background: #fff; }
+    body{ font-family: var(--font); color: var(--graph); background:#fff; }
+    .title{ color: var(--petrol); letter-spacing:-0.02em; }
+    .card{ background:#fff; border:1px solid var(--border); border-radius:1.5rem; }
+    .soft-section{ background: var(--mint); border:1px solid var(--border); border-radius:1.75rem; }
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:.85rem 1.1rem; border-radius:1rem; font-weight:700;
       border:1px solid transparent; text-decoration:none; line-height:1.1;
       transition: filter .15s ease, transform .05s ease;
+      white-space: nowrap;
     }
     .btn:active{ transform: translateY(1px); }
-
     .btn-cta{ background: var(--coral); color:#fff; box-shadow:0 10px 20px rgba(255,138,101,.22); }
     .btn-cta:hover{ filter: brightness(.98); }
-
     .btn-soft{ background:#fff; border-color: var(--border); color: var(--petrol); }
     .btn-soft:hover{ filter: brightness(.99); }
 
-    .title{ color: var(--petrol); letter-spacing: -0.02em; }
-    .card{ background:#fff; border:1px solid var(--border); border-radius:1.5rem; }
-    .soft-section{ background: var(--mint); border:1px solid var(--border); border-radius:1.75rem; }
-
-    :focus-visible{ outline: 3px solid rgba(0,96,100,.25); outline-offset: 2px; border-radius: 12px; }
+    :focus-visible{ outline:3px solid rgba(0,96,100,.25); outline-offset:2px; border-radius:12px; }
   </style>
 </head>
 
 <body class="antialiased">
 
-  <!-- HEADER -->
   <header class="sticky top-0 bg-white/92 backdrop-blur border-b" style="border-color: var(--border); z-index: 50;">
     <nav class="max-w-6xl mx-auto px-4 py-3">
       <div class="flex items-center justify-between gap-4">
+
         <a href="./index.html" class="flex items-center gap-4 min-w-0">
           <img src="./logo-clinica.png" alt="Márcia Araújo – Terapia Nutricional em Oncologia"
                class="h-16 sm:h-20 lg:h-24 w-auto shrink-0" loading="lazy" />
           <div class="min-w-0 leading-tight">
             <p class="text-base sm:text-lg font-semibold truncate title">Márcia Araújo</p>
-            <p class="text-sm sm:text-base truncate" style="color: var(--graph);">Terapia Nutricional em Oncologia</p>
+            <p class="text-sm sm:text-base truncate">Terapia Nutricional em Oncologia</p>
           </div>
         </a>
 
-        <div class="hidden lg:flex items-center gap-6 text-sm whitespace-nowrap" style="color: var(--graph);">
+        <div class="hidden lg:flex items-center gap-6 text-sm whitespace-nowrap">
           <a href="./index.html#sobre" class="hover:underline">Sobre</a>
           <a href="./index.html#indicacoes" class="hover:underline">Indicações</a>
           <a href="./index.html#como-funciona" class="hover:underline">Como funciona</a>
@@ -72,12 +69,10 @@
           <a href="./index.html#contato" class="hover:underline">Contato</a>
         </div>
 
-        <a href="./index.html#contato" class="btn btn-cta shrink-0 whitespace-nowrap">
-          Agendar consulta
-        </a>
+        <a href="./index.html#contato" class="btn btn-cta shrink-0">Agendar consulta</a>
       </div>
 
-      <div class="hidden md:flex lg:hidden mt-3 items-center gap-5 text-sm flex-wrap" style="color: var(--graph);">
+      <div class="hidden md:flex lg:hidden mt-3 items-center gap-5 text-sm flex-wrap">
         <a href="./index.html#sobre" class="hover:underline">Sobre</a>
         <a href="./index.html#indicacoes" class="hover:underline">Indicações</a>
         <a href="./index.html#como-funciona" class="hover:underline">Como funciona</a>
@@ -89,26 +84,24 @@
 
   <main class="max-w-6xl mx-auto px-4">
 
-    <!-- INTRO -->
     <section class="py-14">
       <div class="max-w-3xl">
         <p class="text-sm font-semibold title">Serviços</p>
         <h1 class="mt-2 text-4xl sm:text-5xl font-semibold title">
           Serviços em Terapia Nutricional Oncológica
         </h1>
-        <p class="mt-5 leading-relaxed" style="color: var(--graph);">
+        <p class="mt-5 leading-relaxed">
           O atendimento é estruturado para manejo alimentar por sintomas, adequação da ingestão e orientações seguras
-          compatíveis com a fase do tratamento. Abaixo, as modalidades e o que está contemplado em cada uma.
+          compatíveis com a fase do tratamento. A seguir, as modalidades e o que está contemplado.
         </p>
       </div>
     </section>
 
-    <!-- ACORDEÕES (limpo no celular) -->
     <section class="pb-14 space-y-5">
 
       <details class="card p-6" open>
         <summary class="cursor-pointer text-xl font-semibold title">Consulta nutricional inicial</summary>
-        <div class="mt-4 space-y-4" style="color: var(--graph);">
+        <div class="mt-4 space-y-4">
           <p>
             Consulta voltada à avaliação clínica e alimentar, identificando prioridades do momento e iniciando condutas aplicáveis à rotina.
           </p>
@@ -124,7 +117,7 @@
 
       <details class="card p-6">
         <summary class="cursor-pointer text-xl font-semibold title">Manejo alimentar por sintomas</summary>
-        <div class="mt-4 space-y-4" style="color: var(--graph);">
+        <div class="mt-4 space-y-4">
           <p>
             Estratégias específicas para reduzir desconfortos e facilitar a alimentação, com ajustes progressivos conforme tolerância.
           </p>
@@ -140,7 +133,7 @@
 
       <details class="card p-6">
         <summary class="cursor-pointer text-xl font-semibold title">Acompanhamento – 30 dias</summary>
-        <div class="mt-4 space-y-4" style="color: var(--graph);">
+        <div class="mt-4 space-y-4">
           <p>
             Indicado quando há variação de sintomas e necessidade de ajustes mais frequentes ao longo do mês.
           </p>
@@ -154,7 +147,7 @@
 
       <details class="card p-6">
         <summary class="cursor-pointer text-xl font-semibold title">Acompanhamento – 90 dias</summary>
-        <div class="mt-4 space-y-4" style="color: var(--graph);">
+        <div class="mt-4 space-y-4">
           <p>
             Indicado para ciclos terapêuticos mais longos, manutenção e reabilitação nutricional, com acompanhamento longitudinal.
           </p>
@@ -168,7 +161,7 @@
 
       <details class="card p-6">
         <summary class="cursor-pointer text-xl font-semibold title">Suplementos: quando entram na conduta</summary>
-        <div class="mt-4 space-y-4" style="color: var(--graph);">
+        <div class="mt-4 space-y-4">
           <p>
             Suplementos são considerados quando clinicamente indicados, a partir de ingestão real, sintomas, exames e tolerância,
             evitando uso indiscriminado.
@@ -184,7 +177,7 @@
 
       <details class="card p-6">
         <summary class="cursor-pointer text-xl font-semibold title">Atendimento online</summary>
-        <div class="mt-4 space-y-4" style="color: var(--graph);">
+        <div class="mt-4 space-y-4">
           <p>
             O atendimento é realizado por videoconferência, em horário agendado. O formato online reduz barreiras de deslocamento
             e favorece ajustes conforme sintomas e rotina, mantendo constância no cuidado.
@@ -199,11 +192,10 @@
 
     </section>
 
-    <!-- CTA FINAL (coral) -->
     <section class="pb-16">
       <div class="soft-section p-8 max-w-3xl">
         <h2 class="text-2xl font-semibold title">Agendar consulta</h2>
-        <p class="mt-3 leading-relaxed" style="color: var(--graph);">
+        <p class="mt-3 leading-relaxed">
           Para solicitar agendamento, utilize os canais de contato na página inicial.
         </p>
         <div class="mt-6 flex flex-col sm:flex-row gap-3">
@@ -218,14 +210,13 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="border-t py-8" style="border-color: var(--border);">
-    <div class="max-w-6xl mx-auto px-4 text-sm flex flex-col md:flex-row gap-4 justify-between items-start md:items-center" style="color: var(--graph);">
+    <div class="max-w-6xl mx-auto px-4 text-sm flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
       <div class="flex items-center gap-3">
         <img src="./logo-clinica.png" alt="Logo" class="h-12 sm:h-14 w-auto opacity-80" loading="lazy">
         <p>© <span id="y"></span> Márcia Araújo • Terapia Nutricional em Oncologia</p>
       </div>
-      <a href="./index.html" class="hover:underline" style="color: var(--petrol);">Voltar</a>
+      <a href="./index.html" class="hover:underline title">Voltar</a>
     </div>
   </footer>
 
