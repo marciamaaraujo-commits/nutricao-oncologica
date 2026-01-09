@@ -3,57 +3,65 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Márcia Araújo | Terapia Nutricional em Oncologia</title>
-  <meta name="description" content="Terapia nutricional em oncologia com manejo alimentar individualizado antes, durante e após o tratamento. Atendimento online." />
+
+  <meta name="description" content="Terapia nutricional em oncologia com manejo alimentar individualizado antes, durante e após o tratamento. Atendimento online para pacientes e familiares." />
+  <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#006064" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
     :root{
       --petrol:#006064; --coral:#FF8A65; --mint:#E0F2F1; --graph:#37474F; --border:#D7E6E5;
+      --font:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
     }
-    body{ font-family: 'Inter', sans-serif; color: var(--graph); background:#ffffff; scroll-behavior: smooth; }
+    body{ font-family:var(--font); color:var(--graph); background:#ffffff; scroll-behavior: smooth; }
     .title{ color:var(--petrol); letter-spacing:-0.02em; }
     .card{ background:#fff; border:1px solid var(--border); border-radius:1.5rem; }
     .soft{ background:var(--mint); border:1px solid var(--border); border-radius:1.75rem; }
-    .badge{ display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .7rem; border-radius:999px; font-size:.85rem; font-weight:600; border:1px solid var(--border); color:var(--petrol); background:#fff; }
-    .btn{ display:inline-flex; align-items:center; justify-content:center; padding:.9rem 1.2rem; border-radius:1rem; font-weight:700; transition: all 0.2s; text-decoration: none; }
+    .badge{ display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .7rem; border-radius:999px; font-size:.85rem; font-weight:600; border:1px solid var(--border); color:var(--petrol); background:#fff; white-space:nowrap; }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; padding:.9rem 1.2rem; border-radius:1rem; font-weight:700; text-decoration:none; transition: all 0.2s; }
     .btn-cta{ background:var(--coral); color:#fff; box-shadow:0 10px 20px rgba(255,138,101,.22); }
-    .btn-cta:hover{ filter:brightness(.95); transform: translateY(-1px); }
+    .btn-cta:hover{ filter:brightness(.97); transform: translateY(-1px); }
     .btn-soft{ border:1px solid var(--border); background:#fff; color:var(--petrol); }
     .float{ position:fixed; right:16px; bottom:16px; width:56px; height:56px; border-radius:999px; background:var(--coral); display:flex; align-items:center; justify-content:center; box-shadow:0 10px 25px rgba(0,0,0,.18); z-index:9999; }
     .float svg{ fill:#fff; width:26px; height:26px; }
+    
+    /* FAQ Customizado */
     summary::-webkit-details-marker { display: none; }
     summary { list-style: none; }
     .faq-card:hover { border-color: var(--coral); }
   </style>
 </head>
+
 <body class="antialiased">
 
-  <header class="sticky top-0 bg-white/95 backdrop-blur border-b shadow-sm" style="border-color:var(--border); z-index:50;">
-    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
-      <a href="#inicio" class="flex items-center gap-3">
-        <img src="./logo-clinica.png" alt="Logo" class="h-12 sm:h-16 w-auto" />
-        <div class="hidden sm:block">
-          <p class="text-lg font-bold title leading-none">Márcia Araújo</p>
-          <p class="text-xs">Nutrição Oncológica</p>
+  <header class="sticky top-0 bg-white/92 backdrop-blur border-b" style="border-color:var(--border); z-index:50;">
+    <nav class="max-w-6xl mx-auto px-4 py-3">
+      <div class="flex items-center justify-between gap-4">
+        <a href="#inicio" class="flex items-center gap-4 min-w-0">
+          <img src="./logo-clinica.png" alt="Logo" class="h-16 sm:h-20 lg:h-24 w-auto shrink-0" loading="lazy" />
+          <div class="min-w-0 leading-tight">
+            <p class="text-base sm:text-lg font-semibold truncate title">Márcia Araújo</p>
+            <p class="text-sm sm:text-base truncate">Terapia Nutricional em Oncologia</p>
+          </div>
+        </a>
+        <div class="hidden lg:flex items-center gap-6 text-sm whitespace-nowrap">
+          <a href="#sobre" class="hover:underline">Sobre</a>
+          <a href="#cuidadores" class="hover:underline">Cuidadores e família</a>
+          <a href="#metodologia" class="hover:underline">Como funciona</a>
+          <a href="./servicos.html" class="hover:underline">Serviços</a>
+          <a href="#faq" class="hover:underline font-bold">FAQ</a>
+          <a href="#contato" class="hover:underline">Contato</a>
         </div>
-      </a>
-      <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
-        <a href="#sobre" class="hover:text-[var(--coral)]">Sobre</a>
-        <a href="#cuidadores" class="hover:text-[var(--coral)]">Cuidadores</a>
-        <a href="#como-funciona" class="hover:text-[var(--coral)]">Como funciona</a>
-        <a href="./servicos.html" class="hover:text-[var(--coral)]">Serviços</a>
-        <a href="#faq" class="hover:text-[var(--coral)] font-bold">FAQ</a>
-        <a href="#contato" class="hover:text-[var(--coral)]">Contato</a>
+        <a href="#contato" class="btn btn-cta shrink-0">Agendar consulta</a>
       </div>
-      <a href="#contato" class="btn btn-cta text-sm">Agendar consulta</a>
     </nav>
   </header>
 
@@ -61,52 +69,75 @@
 
     <section class="py-14 grid lg:grid-cols-2 gap-10 items-center">
       <div>
-        <span class="badge">Atendimento Online • Especializado</span>
-        <h1 class="mt-4 text-4xl md:text-5xl font-semibold leading-[1.12] title">Terapia nutricional clínica na jornada oncológica</h1>
+        <span class="badge">Terapia nutricional em oncologia • Atendimento online</span>
+        <h1 class="mt-4 text-4xl md:text-5xl font-semibold leading-[1.12] title">
+          Terapia nutricional clínica durante o tratamento oncológico
+        </h1>
         <p class="mt-5 text-lg leading-relaxed text-gray-600">
-          <strong>Acompanho pacientes antes, durante e após o tratamento, com foco no manejo alimentar.</strong> Construímos um guia que respeita sua cultura e princípios, focado no alívio de sintomas e qualidade de vida.
+          <strong>Acompanho pacientes antes, durante e após o tratamento oncológico, com foco no manejo alimentar.</strong> 
+          Uma abordagem individualizada que respeita profundamente sua cultura, fé e estilo de vida enquanto buscamos o alívio de sintomas.
         </p>
-        <div class="mt-7 flex flex-wrap gap-3">
-          <a href="#contato" class="btn btn-cta">Agendar Consulta</a>
-          <a href="./servicos.html" class="btn btn-soft">Ver Serviços</a>
+        <div class="mt-7 flex flex-col sm:flex-row gap-3">
+          <a href="#contato" class="btn btn-cta">Agendar consulta</a>
+          <a href="./servicos.html" class="btn btn-soft">Ver serviços</a>
         </div>
       </div>
-      <div class="card p-7 shadow-sm bg-gray-50">
+
+      <div class="card p-7 shadow-sm">
         <h2 class="text-base font-semibold title flex items-center gap-2 mb-4">
-          <i data-lucide="check-circle-2"></i> Focos do Acompanhamento
+          <i data-lucide="check-circle-2" class="w-5 h-5 text-[var(--petrol)]"></i> 
+          Focos clínicos do acompanhamento
         </h2>
-        <ul class="space-y-3 text-sm">
-          <li class="flex gap-3"><i data-lucide="check" class="w-4 h-4 text-green-600"></i> Manejo de náuseas, mucosite e paladar.</li>
-          <li class="flex gap-3"><i data-lucide="check" class="w-4 h-4 text-green-600"></i> Adaptação de texturas e volumes.</li>
-          <li class="flex gap-3"><i data-lucide="check" class="w-4 h-4 text-green-600"></i> <strong>Apoio ético e religioso (Dietas específicas).</strong></li>
+        <ul class="space-y-3 text-sm leading-relaxed">
+          <li class="flex gap-3">
+            <span class="mt-2 h-2 w-2 rounded-full shrink-0 bg-[var(--coral)]"></span>
+            <span>Manejo de náuseas, mucosite e alterações do paladar.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-2 h-2 w-2 rounded-full shrink-0 bg-[var(--coral)]"></span>
+            <span>Ajustes de consistência e fracionamento para melhor tolerância.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-2 h-2 w-2 rounded-full shrink-0 bg-[var(--coral)]"></span>
+            <span><strong>Respeito total aos seus princípios éticos e religiosos.</strong></span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mt-2 h-2 w-2 rounded-full shrink-0 bg-[var(--coral)]"></span>
+            <span>Suplementação apenas sob avaliação criteriosa de necessidade.</span>
+          </li>
         </ul>
       </div>
     </section>
 
-    <section id="sobre" class="py-16">
-      <div class="soft p-8 md:p-12">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div class="rounded-3xl overflow-hidden border-4 border-white shadow-lg">
-            <img src="./foto-v3.jpeg" alt="Márcia Araújo" class="w-full h-auto object-cover" />
-          </div>
-          <div>
-            <p class="text-sm font-bold text-[var(--coral)] uppercase tracking-widest">Sobre</p>
-            <h2 class="text-3xl md:text-4xl font-bold title mt-2 mb-6">Sou Márcia Araújo</h2>
-            <p class="italic mb-6 leading-relaxed">"Minha missão é transformar a nutrição em uma aliada de força e esperança durante a sua jornada."</p>
-            <p class="mb-6 leading-relaxed">
-              Acredito que o cuidado oncológico envolve decisões clínicas, rotina e acolhimento. Organizo a terapia nutricional com foco no que é possível e seguro para cada fase, respeitando suas preferências e a realidade do seu dia a dia.
-            </p>
-            <div class="space-y-4 mb-8 text-sm">
-              <div class="flex items-start gap-3">
-                <i data-lucide="heart" class="text-[var(--coral)] w-5 h-5 shrink-0"></i>
-                <p>Priorizo seus sintomas e tolerância alimentar para definir condutas.</p>
-              </div>
-              <div class="flex items-start gap-3">
-                <i data-lucide="user-check" class="text-[var(--coral)] w-5 h-5 shrink-0"></i>
-                <p>Integração total com sua equipe médica para um cuidado seguro.</p>
-              </div>
+    <section id="sobre" class="py-10">
+      <div class="soft p-7 sm:p-8">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6">
+            <div class="rounded-3xl overflow-hidden border bg-white shadow-lg" style="border-color:var(--border);">
+              <img src="./foto-v3.jpeg" alt="Márcia Araújo" class="block w-full h-auto object-cover" loading="lazy" />
             </div>
-            <a href="#contato" class="btn btn-cta">Falar com Márcia</a>
+          </div>
+          <div class="lg:col-span-6">
+            <p class="text-sm font-semibold title">Sobre</p>
+            <h2 class="mt-2 text-3xl sm:text-4xl font-semibold title">Sou Márcia Araújo</h2>
+            <p class="mt-4 italic leading-relaxed text-gray-700">“Minha missão é transformar a nutrição em uma aliada de força e esperança durante a sua jornada.”</p>
+            <p class="mt-5 leading-relaxed">
+              No meu acompanhamento, organizo a terapia nutricional com foco no que é possível e seguro para cada fase, 
+              respeitando suas preferências alimentares e a realidade do seu dia a dia — sem planos engessados.
+            </p>
+            <ul class="mt-7 space-y-3">
+              <li class="flex gap-3 text-sm">
+                <i data-lucide="heart" class="text-[var(--coral)] w-5 h-5 shrink-0"></i>
+                <span>Priorizo sintomas e tolerância alimentar em cada conduta.</span>
+              </li>
+              <li class="flex gap-3 text-sm">
+                <i data-lucide="shield-check" class="text-[var(--coral)] w-5 h-5 shrink-0"></i>
+                <span>Integração total com sua equipe médica e de saúde.</span>
+              </li>
+            </ul>
+            <div class="mt-8">
+              <a href="#contato" class="btn btn-cta">Agendar consulta</a>
+            </div>
           </div>
         </div>
       </div>
@@ -115,37 +146,37 @@
     <section id="cuidadores" class="py-12">
       <div class="card p-8">
         <p class="text-sm font-semibold title">Cuidadores e família</p>
-        <h2 class="mt-2 text-3xl font-semibold title">O cuidado nutricional também envolve quem cuida</h2>
-        <div class="mt-5 space-y-4 text-gray-600 leading-relaxed max-w-4xl">
-          <p>No meu acompanhamento, considero essencial que familiares e cuidadores também sejam orientados. Explico como adaptar preparações e lidar com dificuldades do dia a dia, sem transformar a alimentação em estresse.</p>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-semibold title">O cuidado nutricional também envolve quem cuida</h2>
+        <div class="mt-5 space-y-4 leading-relaxed max-w-4xl text-gray-600">
+          <p>Considero essencial que familiares e acompanhantes sejam orientados e acolhidos. Explico como adaptar preparações e lidar com dificuldades sem transformar a alimentação em mais uma fonte de estresse.</p>
         </div>
-        <div class="mt-7">
-          <a href="./servicos.html" class="btn btn-soft">Ver suporte para famílias</a>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="./servicos.html" class="btn btn-soft text-sm">Descubra como cuidaremos de você</a>
         </div>
       </div>
     </section>
 
-    <section id="como-funciona" class="py-16">
+    <section id="metodologia" class="py-16">
       <div class="text-center mb-12">
         <p class="text-sm font-bold tracking-widest text-[var(--coral)] uppercase">Metodologia</p>
-        <h2 class="text-3xl font-bold title">Como caminharemos juntos</h2>
+        <h2 class="mt-2 text-3xl font-bold title">Como caminharemos juntos</h2>
       </div>
       <div class="grid md:grid-cols-4 gap-6">
         <div class="card p-6 border-t-4 border-t-[var(--petrol)]">
-          <h3 class="font-bold title mb-2">01. Escuta</h3>
-          <p class="text-sm text-gray-600">Compreensão da sua rotina e preferências reais.</p>
+          <h3 class="font-bold text-lg title mb-3">01. Acolher</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">Conhecer sua rotina, preferências e desafios diários.</p>
         </div>
         <div class="card p-6 border-t-4 border-t-[var(--petrol)]">
-          <h3 class="font-bold title mb-2">02. Estratégia</h3>
-          <p class="text-sm text-gray-600">Análise de exames para fortalecer seu corpo.</p>
+          <h3 class="font-bold text-lg title mb-3">02. Estratégia</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">Análise técnica para fortalecer seu organismo com segurança.</p>
         </div>
         <div class="card p-6 border-t-4 border-t-[var(--petrol)]">
-          <h3 class="font-bold title mb-2">03. Plano Ético</h3>
-          <p class="text-sm text-gray-600">Guia alimentar que <strong>prioriza sua fé e cultura</strong>.</p>
+          <h3 class="font-bold text-lg title mb-3">03. Plano Ético</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">Guia alimentar que <strong>prioriza sua fé, cultura e estilo de vida.</strong></p>
         </div>
         <div class="card p-6 border-t-4 border-t-[var(--coral)]">
-          <h3 class="font-bold title mb-2">04. Suporte</h3>
-          <p class="text-sm text-gray-600">Ajustes contínuos conforme sua evolução.</p>
+          <h3 class="font-bold text-lg title mb-3">04. Evolução</h3>
+          <p class="text-sm text-gray-600 leading-relaxed">Ajustes contínuos conforme sua evolução e tolerância.</p>
         </div>
       </div>
     </section>
@@ -153,24 +184,24 @@
     <section id="faq" class="py-16 max-w-3xl mx-auto">
       <h2 class="text-3xl font-bold title text-center mb-10">Dúvidas Frequentes</h2>
       <div class="space-y-4">
-        <details class="card faq-card group">
-          <summary class="flex items-center gap-3 p-5 cursor-pointer font-semibold">
-            <i data-lucide="shield-check" class="text-[var(--petrol)]"></i>
+        <details class="card faq-card group shadow-sm">
+          <summary class="flex items-center gap-3 p-6 cursor-pointer font-semibold text-gray-700">
+            <i data-lucide="shield-check" class="w-5 h-5 text-[var(--petrol)]"></i>
             O plano respeitará meus princípios e religião?
             <i data-lucide="chevron-down" class="ml-auto w-4 h-4 transition-transform group-open:rotate-180"></i>
           </summary>
-          <div class="px-5 pb-5 text-sm text-gray-600 border-t pt-4">
-            <strong>Sua identidade é a base do meu trabalho.</strong> O plano alimentar é pautado pelo <strong>estrito respeito aos seus valores éticos e religiosos</strong>. Nada será imposto; curamos o corpo <strong>sem desrespeitar quem você é.</strong>
+          <div class="px-6 pb-6 text-sm text-gray-600 border-t pt-4">
+            <strong>Sua identidade é a base do meu trabalho.</strong> O acompanhamento é pautado pelo <strong>estrito respeito aos seus valores éticos e religiosos</strong>. Nada será imposto; curamos o corpo sem desrespeitar quem você é.
           </div>
         </details>
-        <details class="card faq-card group">
-          <summary class="flex items-center gap-3 p-5 cursor-pointer font-semibold">
-            <i data-lucide="play-circle" class="text-[var(--petrol)]"></i>
+        <details class="card faq-card group shadow-sm">
+          <summary class="flex items-center gap-3 p-6 cursor-pointer font-semibold text-gray-700">
+            <i data-lucide="play-circle" class="w-5 h-5 text-[var(--petrol)]"></i>
             Posso começar antes do tratamento médico?
             <i data-lucide="chevron-down" class="ml-auto w-4 h-4 transition-transform group-open:rotate-180"></i>
           </summary>
-          <div class="px-5 pb-5 text-sm text-gray-600 border-t pt-4">
-            <strong>Sim. O preparo prévio é um pilar do sucesso.</strong> Criamos uma reserva metabólica que ajuda na tolerância aos tratamentos.
+          <div class="px-6 pb-6 text-sm text-gray-600 border-t pt-4">
+            <strong>Com certeza. O preparo prévio é um pilar do sucesso.</strong> Criamos uma reserva metabólica que ajuda na tolerância aos tratamentos.
           </div>
         </details>
       </div>
@@ -183,19 +214,16 @@
           <a class="btn btn-cta px-10" href="https://wa.me/5511981619625">WhatsApp</a>
           <a class="btn btn-soft px-10" href="mailto:contato@marciaaraujo.com.br">E-mail</a>
         </div>
-        <p class="mt-6 text-xs text-gray-500">CRN-3 XXXXX • Atendimento online para todo o Brasil</p>
       </div>
     </section>
 
   </main>
 
   <footer class="border-t py-8 text-center text-sm text-gray-500">
-    <p>© <span id="y"></span> Márcia Araújo • Terapia Nutricional em Oncologia</p>
+    <p>© <span id="y"></span> Márcia Araújo • CRN-3 XXXXX</p>
   </footer>
 
-  <a class="float" href="https://wa.me/5511981619625" target="_blank">
-    <svg viewBox="0 0 32 32"><path d="M19.11 17.39c-.27-.14-1.58-.78-1.83-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.34-.81-.72-1.36-1.6-1.52-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3s.99 2.67 1.13 2.85c.14.18 1.95 2.98 4.73 4.18.66.28 1.17.45 1.57.58.66.21 1.26.18 1.73.11.53-.08 1.58-.65 1.8-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.02 3C9.39 3 4 8.39 4 15.02c0 2.12.56 4.19 1.62 6.01L4 29l8.2-1.56c1.76.96 3.74 1.47 5.82 1.47 6.63 0 12.02-5.39 12.02-12.02C30.04 8.39 22.65 3 16.02 3zm0 23.04c-1.89 0-3.65-.52-5.18-1.42l-.37-.22-4.86.93.93-4.74-.24-.39c-1-1.6-1.53-3.44-1.53-5.32C5.77 9.48 10.48 4.77 16.02 4.77s10.25 4.71 10.25 10.25-4.71 10.25-10.25 10.25z"/></svg>
-  </a>
+  <a class="float" href="https://wa.me/5511981619625" target="_blank"><svg viewBox="0 0 32 32"><path d="M19.11 17.39c-.27-.14-1.58-.78-1.83-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.34-.81-.72-1.36-1.6-1.52-1.87-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3s.99 2.67 1.13 2.85c.14.18 1.95 2.98 4.73 4.18.66.28 1.17.45 1.57.58.66.21 1.26.18 1.73.11.53-.08 1.58-.65 1.8-1.28.22-.63.22-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.02 3C9.39 3 4 8.39 4 15.02c0 2.12.56 4.19 1.62 6.01L4 29l8.2-1.56c1.76.96 3.74 1.47 5.82 1.47 6.63 0 12.02-5.39 12.02-12.02C30.04 8.39 22.65 3 16.02 3zm0 23.04c-1.89 0-3.65-.52-5.18-1.42l-.37-.22-4.86.93.93-4.74-.24-.39c-1-1.6-1.53-3.44-1.53-5.32C5.77 9.48 10.48 4.77 16.02 4.77s10.25 4.71 10.25 10.25-4.71 10.25-10.25 10.25z"/></svg></a>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
