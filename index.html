@@ -7,7 +7,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -18,29 +18,36 @@
     .title{ color:var(--petrol); letter-spacing:-0.02em; }
     .card{ background:#fff; border:1px solid var(--border); border-radius:1.5rem; }
     .soft{ background:var(--mint); border:1px solid var(--border); border-radius:1.75rem; }
-    .btn-cta{ background:var(--coral); color:#fff; border-radius:1rem; padding:.9rem 1.2rem; font-weight:700; transition: all 0.2s; display:inline-flex; align-items:center; text-decoration: none; }
-    .btn-cta:hover{ filter:brightness(.97); transform: translateY(-1px); }
-    .btn-soft{ border:1px solid var(--border); background:#fff; color:var(--petrol); border-radius:1rem; padding:.9rem 1.2rem; font-weight:700; text-decoration: none; transition: 0.2s; }
-    .btn-soft:hover{ background: #f8f8f8; }
+    
+    /* Botão Principal */
+    .btn-cta{ background:var(--coral); color:#fff; border-radius:1rem; padding:.9rem 1.2rem; font-weight:700; transition: all 0.2s; display:inline-flex; align-items:center; text-decoration: none; border: 2px solid var(--coral); }
+    .btn-cta:hover{ filter:brightness(.97); transform: translateY(-1px); box-shadow: 0 4px 15px rgba(255,138,101,0.3); }
+    
+    /* Botão Secundário (Refinado) */
+    .btn-outline{ border: 2px solid var(--petrol); background: transparent; color:var(--petrol); border-radius:1rem; padding:.9rem 1.2rem; font-weight:700; text-decoration: none; transition: 0.2s; display:inline-flex; align-items:center; }
+    .btn-outline:hover{ background: var(--petrol); color: #fff; }
+
     summary::-webkit-details-marker { display: none; }
     summary { list-style: none; }
     .faq-card:hover { border-color: var(--coral); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    
+    .hero-title { line-height: 1.15; }
   </style>
 </head>
 <body class="antialiased">
 
   <header class="sticky top-0 bg-white/95 backdrop-blur border-b z-50" style="border-color:var(--border);">
-    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#inicio" class="flex items-center gap-3">
-        <img src="./logo-clinica.png" alt="Logo Márcia Araújo" class="h-14 w-auto shrink-0" />
-        <div class="hidden sm:block leading-none">
-          <p class="text-lg font-bold title">Márcia Araújo</p>
-          <p class="text-[10px] uppercase tracking-widest font-bold text-gray-400">Nutrição Especializada</p>
+    <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#inicio" class="flex items-center gap-4 min-w-0">
+        <img src="./logo-clinica.png" alt="Logo Márcia Araújo" class="h-16 sm:h-20 lg:h-24 w-auto shrink-0" />
+        <div class="hidden sm:block leading-tight">
+          <p class="text-xl font-bold title">Márcia Araújo</p>
+          <p class="text-[11px] uppercase tracking-widest font-bold text-gray-400">Nutrição Especializada</p>
         </div>
       </a>
       <div class="hidden lg:flex gap-8 text-sm font-medium title">
         <a href="#sobre" class="hover:text-[var(--coral)] transition-colors">Sobre</a>
-        <a href="#abordagem" class="hover:text-[var(--coral)] transition-colors">Abordagem</a>
+        <a href="#abordagem" class="hover:text-[var(--coral)] transition-colors">Como posso te ajudar?</a>
         <a href="#metodologia" class="hover:text-[var(--coral)] transition-colors">Metodologia</a>
         <a href="#faq" class="hover:text-[var(--coral)] transition-colors">Dúvidas</a>
         <a href="https://wa.me/5511981619625?text=Olá,%20Márcia!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20como%20funciona%20a%20sua%20Abordagem%20Terapêutica.%20Poderia%20me%20ajudar?" class="btn-cta text-xs py-2 px-6">Agendar</a>
@@ -50,31 +57,62 @@
 
   <main id="inicio" class="max-w-6xl mx-auto px-4">
 
-    <section class="py-16 grid lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <span class="inline-block px-3 py-1 rounded-full bg-[var(--mint)] text-[var(--petrol)] text-xs font-bold mb-4 italic">Cuidado que respeita sua história</span>
-        <h1 class="text-4xl md:text-5xl font-bold leading-tight title">
-          A nutrição como suporte em cada etapa da sua jornada de cura
+    <section class="py-20 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="relative">
+        <div class="absolute -top-10 -left-10 w-32 h-32 bg-[var(--mint)] rounded-full blur-3xl opacity-50 -z-10"></div>
+        
+        <div class="flex items-center gap-2 mb-6">
+          <div class="h-[1px] w-8 bg-[var(--coral)]"></div>
+          <span class="text-xs font-bold tracking-[0.2em] text-[var(--petrol)] uppercase italic">Cuidado que respeita sua história</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-light title hero-title mb-8">
+          A nutrição como <span class="font-bold">suporte</span> em cada etapa da sua jornada de <span class="text-[var(--coral)] font-semibold italic">cura</span>
         </h1>
-        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+
+        <p class="mt-6 text-lg text-gray-500 leading-relaxed max-w-lg border-l-2 border-[var(--mint)] pl-6">
           Ofereço um acompanhamento próximo para <strong>preservar sua disposição e trazer mais conforto</strong> ao seu dia a dia, com estratégias desenhadas sob medida para a sua realidade.
         </p>
-        <div class="mt-8 flex gap-4">
-          <a href="https://wa.me/5511981619625?text=Olá,%20Márcia!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20como%20funciona%20a%20sua%20Abordagem%20Terapêutica.%20Poderia%20me%20ajudar?" class="btn-cta">Agendar Consulta</a>
-          <a href="#abordagem" class="btn-soft text-sm">Conhecer meu suporte</a>
+
+        <div class="mt-10 flex flex-wrap gap-5">
+          <a href="https://wa.me/5511981619625?text=Olá,%20Márcia!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20como%20funciona%20a%20sua%20Abordagem%20Terapêutica.%20Poderia%20me%20ajudar?" class="btn-cta shadow-lg">
+            Agendar Consulta
+          </a>
+          <a href="#abordagem" class="btn-outline">
+            <i data-lucide="help-circle" class="w-4 h-4 mr-2"></i>
+            Como posso te ajudar?
+          </a>
         </div>
       </div>
 
-      <div class="card p-8 shadow-sm bg-gray-50/50">
-        <h2 class="text-lg font-bold title mb-6 flex items-center gap-2">
-          <i data-lucide="heart" class="text-[var(--coral)] w-5 h-5"></i> Como atuamos no seu bem-estar:
-        </h2>
-        <ul class="space-y-4 text-sm text-gray-700 leading-relaxed">
-          <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-600 shrink-0"></i> Organização nutricional para apoiar cada fase do tratamento médico.</li>
-          <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-600 shrink-0"></i> Ajustes práticos para garantir que a alimentação continue prazerosa.</li>
-          <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-600 shrink-0"></i> Estratégias para manter sua vitalidade e qualidade de vida.</li>
-          <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-600 shrink-0"></i> <strong>Respeito absoluto às suas escolhas e estilo de vida.</strong></li>
-        </ul>
+      <div class="relative">
+        <div class="card p-8 shadow-xl bg-white border-none relative z-10">
+          <h2 class="text-lg font-bold title mb-8 flex items-center gap-3">
+            <span class="p-2 bg-[var(--mint)] rounded-lg text-[var(--petrol)]">
+              <i data-lucide="activity" class="w-5 h-5"></i>
+            </span> 
+            Focos do nosso bem-estar:
+          </h2>
+          <ul class="space-y-6 text-sm text-gray-600">
+            <li class="flex gap-4">
+              <i data-lucide="check" class="w-5 h-5 text-[var(--coral)] shrink-0"></i> 
+              <span>Organização nutricional para apoiar cada fase do tratamento médico.</span>
+            </li>
+            <li class="flex gap-4">
+              <i data-lucide="check" class="w-5 h-5 text-[var(--coral)] shrink-0"></i> 
+              <span>Ajustes práticos para garantir que a alimentação continue prazerosa.</span>
+            </li>
+            <li class="flex gap-4">
+              <i data-lucide="check" class="w-5 h-5 text-[var(--coral)] shrink-0"></i> 
+              <span>Estratégias para manter sua vitalidade e qualidade de vida.</span>
+            </li>
+            <li class="flex gap-4 pt-4 border-t border-gray-100 italic font-medium">
+              <i data-lucide="heart" class="w-5 h-5 text-[var(--coral)] shrink-0"></i> 
+              <span>Respeito absoluto às suas escolhas e estilo de vida.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="absolute -bottom-4 -right-4 w-full h-full border-2 border-[var(--mint)] rounded-[1.5rem] -z-10"></div>
       </div>
     </section>
 
@@ -180,22 +218,22 @@
         <h2 class="text-3xl font-bold title">Dúvidas Comuns</h2>
       </div>
       <div class="space-y-4">
-        <details class="card faq-card group shadow-sm overflow-hidden">
-          <summary class="flex items-center gap-4 p-6 cursor-pointer font-semibold text-[var(--petrol)] bg-white hover:bg-gray-50 transition-colors">
+        <details class="card faq-card group shadow-sm overflow-hidden border-none">
+          <summary class="flex items-center gap-4 p-6 cursor-pointer font-semibold text-[var(--petrol)] bg-white hover:bg-gray-50 transition-colors border-b border-gray-100">
             <span class="flex-1 text-left">Vou ter que cortar tudo o que eu gosto de comer?</span>
             <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 text-[var(--coral)]"></i>
           </summary>
-          <div class="px-6 pb-6 text-gray-600 leading-relaxed text-sm border-t pt-4 bg-gray-50/30">
+          <div class="px-6 pb-6 text-gray-600 leading-relaxed text-sm pt-4 bg-gray-50/30">
             <strong>De forma alguma.</strong> O foco é a adaptação, não a proibição. O prazer à mesa é fundamental para o seu bem-estar. Vamos ajustar quantidades e momentos, respeitando suas preferências.
           </div>
         </details>
 
-        <details class="card faq-card group shadow-sm overflow-hidden">
-          <summary class="flex items-center gap-4 p-6 cursor-pointer font-semibold text-[var(--petrol)] bg-white hover:bg-gray-50 transition-colors">
+        <details class="card faq-card group shadow-sm overflow-hidden border-none">
+          <summary class="flex items-center gap-4 p-6 cursor-pointer font-semibold text-[var(--petrol)] bg-white hover:bg-gray-50 transition-colors border-b border-gray-100">
             <span class="flex-1 text-left">Preciso usar complementos além da comida?</span>
             <i data-lucide="chevron-down" class="w-5 h-5 transition-transform group-open:rotate-180 text-[var(--coral)]"></i>
           </summary>
-          <div class="px-6 pb-6 text-gray-600 leading-relaxed text-sm border-t pt-4 bg-gray-50/30">
+          <div class="px-6 pb-6 text-gray-600 leading-relaxed text-sm pt-4 bg-gray-50/30">
             A prioridade será sempre a <strong>comida de verdade</strong>. Complementos só entram em cena se houver necessidade clínica clara ou dificuldade em atingir metas apenas com as refeições.
           </div>
         </details>
