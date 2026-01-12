@@ -3,90 +3,212 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Diretrizes | Márcia Araújo</title>
-  
+
+  <title>Serviços | Márcia Araújo</title>
+  <meta name="description" content="Detalhes do acompanhamento em terapia nutricional em oncologia: preparo, manejo de sintomas, reabilitação e apoio ao cuidador. Atendimento online." />
+  <meta name="theme-color" content="#006064" />
+
   <link rel="icon" type="image/png" href="./favicon.png" />
-  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
-  
+
   <style>
-    :root{ --petrol:#006064; --coral:#FF8A65; --mint:#E0F2F1; --border:#D7E6E5; }
-    body{ font-family: 'Inter', sans-serif; color: #37474F; background:#fff; scroll-behavior: smooth; font-size: 15px; }
-    .title{ color:var(--petrol); }
-    .card{ border:1px solid var(--border); border-radius:1.25rem; background:#fff; transition: all 0.3s; }
-    .btn-cta{ background:var(--coral); color:#fff; border-radius:1rem; padding:.9rem 1.2rem; font-weight:700; transition: all 0.2s; display:inline-flex; align-items:center; text-decoration: none; border: 2px solid var(--coral); font-size: 0.9rem; }
-    .btn-cta:hover{ filter:brightness(.97); transform: translateY(-1px); box-shadow: 0 4px 10px rgba(255,138,101,0.2); }
+    :root{
+      --petrol:#006064;   /* principal */
+      --coral:#FF8A65;    /* CTA */
+      --mint:#E0F2F1;     /* fundo de seção */
+      --graph:#37474F;    /* texto */
+      --border:#D7E6E5;
+      --font:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+    }
+
+    html{ scroll-behavior:smooth; }
+    body{ font-family:var(--font); color:var(--graph); background:#fff; font-size:15px; }
+
+    .title{ color:var(--petrol); letter-spacing:-0.015em; }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:1.5rem;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .card:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    }
+
+    .soft{ background:var(--mint); border:1px solid var(--border); border-radius:1.75rem; }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+      padding:.95rem 1.15rem; border-radius:1rem; font-weight:800;
+      text-decoration:none; line-height:1.05;
+      transition:filter .15s ease, transform .05s ease, box-shadow .15s ease;
+      white-space:nowrap; user-select:none;
+    }
+    .btn:active{ transform:translateY(1px); }
+
+    .btn-cta{
+      background:var(--coral); color:#fff; border:2px solid var(--coral);
+      box-shadow:0 12px 24px rgba(255,138,101,.18);
+    }
+    .btn-cta:hover{ filter:brightness(.97); }
+
+    .btn-soft{ background:#fff; color:var(--petrol); border:1px solid var(--border); }
+    .btn-soft:hover{ filter:brightness(.99); }
+
+    .chip{
+      display:inline-flex; align-items:center; gap:.45rem;
+      border:1px solid var(--border); padding:.35rem .7rem;
+      border-radius:999px; font-weight:800; font-size:.78rem;
+      color:var(--petrol); background:#fff; text-decoration:none; white-space:nowrap;
+    }
+
+    :focus-visible{
+      outline:3px solid rgba(0,96,100,.28);
+      outline-offset:2px;
+      border-radius:12px;
+    }
   </style>
 </head>
+
 <body class="antialiased">
 
-  <nav class="border-b sticky top-0 bg-white/90 backdrop-blur z-50" style="border-color:var(--border);">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="./index.html" class="flex items-center gap-2 title font-bold hover:text-[var(--coral)] transition-colors text-xs uppercase tracking-widest">
-        <i data-lucide="arrow-left" class="w-4 h-4"></i> Voltar ao Início
-      </a>
-      
-      <img src="./logo-clinica.png" alt="Logo Márcia Araújo" class="h-12 sm:h-14 w-auto" />
-    </div>
-  </nav>
+  <!-- HEADER padronizado com index (sem CTA para não duplicar) -->
+  <header class="sticky top-0 bg-white/92 backdrop-blur border-b z-50" style="border-color:var(--border);">
+    <nav class="max-w-6xl mx-auto px-4 py-2.5">
+      <div class="flex items-center justify-between gap-4">
+
+        <!-- Logo + Nome -->
+        <a href="./index.html" class="flex items-center gap-4 min-w-0">
+          <!-- Logo maior (padrão do index atualizado) -->
+          <img src="./logo-clinica.png" alt="Logo da clínica" class="h-20 sm:h-24 md:h-28 w-auto shrink-0" loading="lazy">
+          <div class="min-w-0 leading-tight">
+            <p class="text-sm sm:text-base font-extrabold truncate title">Márcia Araújo</p>
+            <p class="text-xs sm:text-sm font-medium tracking-wide text-slate-500 truncate">
+              Atendimento especializado
+            </p>
+          </div>
+        </a>
+
+        <!-- Menu desktop (páginas) -->
+        <div class="hidden lg:flex items-center gap-6 text-xs font-extrabold uppercase tracking-widest whitespace-nowrap">
+          <a href="./sobre.html" class="hover:text-[var(--coral)] transition-colors">Sobre</a>
+          <a href="./metodologia.html" class="hover:text-[var(--coral)] transition-colors">Metodologia</a>
+          <a href="./servicos.html" class="hover:text-[var(--coral)] transition-colors">Serviços</a>
+          <a href="./diretrizes.html" class="hover:text-[var(--coral)] transition-colors">Diretrizes</a>
+          <a href="./contato.html" class="hover:text-[var(--coral)] transition-colors">Contato</a>
+        </div>
+      </div>
+
+      <!-- Chips mobile -->
+      <div class="lg:hidden mt-3 flex flex-wrap gap-2">
+        <a class="chip" href="./metodologia.html"><i data-lucide="route" class="w-4 h-4"></i>Metodologia</a>
+        <a class="chip" href="./servicos.html"><i data-lucide="file-text" class="w-4 h-4"></i>Serviços</a>
+        <a class="chip" href="./diretrizes.html"><i data-lucide="book-open" class="w-4 h-4"></i>Diretrizes</a>
+        <a class="chip" href="./contato.html"><i data-lucide="message-circle" class="w-4 h-4"></i>Contato</a>
+      </div>
+    </nav>
+  </header>
 
   <main class="max-w-5xl mx-auto px-4 py-16">
+
+    <!-- HERO (ajustado conforme pedido) -->
     <header class="mb-12 text-center">
-      <span class="text-[10px] font-bold tracking-[0.2em] text-[var(--coral)] uppercase mb-2 block">Detalhes do Acompanhamento</span>
-      <h1 class="text-3xl font-bold title mb-4">Diretrizes do Cuidado</h1>
-      <p class="text-gray-500 max-w-2xl mx-auto">Ciência e acolhimento integrados para oferecer suporte em cada etapa da sua jornada.</p>
+      <h1 class="text-3xl sm:text-4xl font-extrabold title mb-3">Detalhes do Acompanhamento</h1>
+      <p class="text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        Ciência e acolhimento integrados para oferecer suporte em cada etapa da sua jornada.
+      </p>
     </header>
 
-    <div class="grid md:grid-cols-2 gap-8 mb-20">
-      <div class="card p-8 border-l-4 border-l-[var(--petrol)] shadow-sm">
+    <!-- CARDS -->
+    <section class="grid md:grid-cols-2 gap-8 mb-16">
+      <div class="card p-8 border-l-4 border-l-[var(--petrol)]">
         <div class="w-10 h-10 bg-[var(--mint)] text-[var(--petrol)] rounded-lg flex items-center justify-center mb-4">
           <i data-lucide="calendar-heart" class="w-5 h-5"></i>
         </div>
-        <h3 class="font-bold title text-lg mb-2">Preparo Nutricional</h3>
-        <p class="text-sm text-gray-600 leading-relaxed">Organização estratégica para garantir que o seu corpo tenha as reservas necessárias antes de iniciar novas etapas do tratamento médico.</p>
+        <h3 class="font-extrabold title text-lg mb-2">Preparo nutricional</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          Organização estratégica para apoiar suas reservas e sua rotina antes de novas etapas do tratamento,
+          respeitando preferências, tolerância e o que é viável no dia a dia.
+        </p>
       </div>
 
-      <div class="card p-8 border-l-4 border-l-[var(--coral)] shadow-sm">
+      <div class="card p-8 border-l-4 border-l-[var(--coral)]">
         <div class="w-10 h-10 bg-[var(--mint)] text-[var(--petrol)] rounded-lg flex items-center justify-center mb-4">
           <i data-lucide="utensils" class="w-5 h-5"></i>
         </div>
-        <h3 class="font-bold title text-lg mb-2">Manejo de Sintomas</h3>
-        <p class="text-sm text-gray-600 leading-relaxed">Ajustes práticos na alimentação para reduzir desconfortos e garantir que o ato de comer continue a ser seguro e prazeroso.</p>
+        <h3 class="font-extrabold title text-lg mb-2">Manejo de sintomas</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          Ajustes práticos na alimentação (texturas, fracionamento e escolhas) para reduzir desconfortos
+          e manter a ingestão possível com segurança e acolhimento.
+        </p>
       </div>
 
-      <div class="card p-8 border-l-4 border-l-[var(--petrol)] shadow-sm">
+      <div class="card p-8 border-l-4 border-l-[var(--petrol)]">
         <div class="w-10 h-10 bg-[var(--mint)] text-[var(--petrol)] rounded-lg flex items-center justify-center mb-4">
           <i data-lucide="zap" class="w-5 h-5"></i>
         </div>
-        <h3 class="font-bold title text-lg mb-2">Vitalidade e Reabilitação</h3>
-        <p class="text-sm text-gray-600 leading-relaxed">Foco na recuperação da força e na consolidação de novos hábitos alimentares para garantir qualidade de vida a longo prazo.</p>
+        <h3 class="font-extrabold title text-lg mb-2">Vitalidade e reabilitação</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          Apoio na recuperação, transições do pós-tratamento e organização de hábitos alimentares
+          para qualidade de vida de longo prazo, com estratégias realistas.
+        </p>
       </div>
 
-      <div class="card p-8 border-l-4 border-l-[var(--petrol)] shadow-sm">
+      <div class="card p-8 border-l-4 border-l-[var(--petrol)]">
         <div class="w-10 h-10 bg-[var(--mint)] text-[var(--petrol)] rounded-lg flex items-center justify-center mb-4">
           <i data-lucide="users" class="w-5 h-5"></i>
         </div>
-        <h3 class="font-bold title text-lg mb-2">Apoio aos Cuidadores</h3>
-        <p class="text-sm text-gray-600 leading-relaxed">Orientação técnica e prática para que a rede de apoio saiba exatamente como agir na cozinha e no dia a dia, com leveza e segurança.</p>
+        <h3 class="font-extrabold title text-lg mb-2">Apoio aos cuidadores</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          Orientação técnica e prática para a rede de apoio aplicar adaptações com clareza,
+          reduzir inseguranças e tornar as refeições mais leves no cotidiano.
+        </p>
       </div>
-    </div>
+    </section>
 
-    <div class="text-center bg-gray-50 rounded-[2rem] py-12 px-6">
-       <h2 class="text-xl font-bold title mb-4">Precisa de um acompanhamento personalizado?</h2>
-       <p class="text-sm text-gray-500 mb-8">Estou aqui para desenhar a melhor estratégia para o seu momento atual.</p>
-       <a href="https://wa.me/5511981619625?text=Olá,%20Márcia!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20como%20funciona%20a%20sua%20Abordagem%20Terapêutica." class="btn-cta shadow-lg">
-         Falar com a Márcia no WhatsApp
-       </a>
-    </div>
+    <!-- CTA FINAL (mantido para WhatsApp; texto do botão ajustado) -->
+    <section class="text-center">
+      <div class="soft py-12 px-6">
+        <h2 class="text-xl sm:text-2xl font-extrabold title mb-3">Precisa de um acompanhamento personalizado?</h2>
+        <p class="text-sm text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+          Estou aqui para desenhar a melhor estratégia para o seu momento atual.
+        </p>
+
+        <a
+          href="https://wa.me/5511981619625?text=Ol%C3%A1%2C%20M%C3%A1rcia!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20como%20funciona%20o%20acompanhamento%20nutricional%20em%20oncologia."
+          class="btn btn-cta"
+          target="_blank" rel="noreferrer"
+        >
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          Vamos conversar?
+        </a>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="py-8 text-center text-[10px] text-gray-400">
-    <p>© Márcia Araújo • Nutrição Especializada • Todos os direitos reservados</p>
+  <!-- FOOTER padronizado com index (sem CTA) -->
+  <footer class="border-t py-8" style="border-color:var(--border);">
+    <div class="max-w-6xl mx-auto px-4 text-sm flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
+      <div class="flex items-center gap-3">
+        <img src="./logo-clinica.png" alt="Logo" class="h-12 sm:h-14 w-auto opacity-80" loading="lazy">
+        <p>© <span id="y"></span> Márcia Araújo • Terapia Nutricional em Oncologia</p>
+      </div>
+      <p><a class="hover:underline title" href="#">Voltar ao topo</a></p>
+    </div>
   </footer>
 
   <script>
     lucide.createIcons();
+    document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
