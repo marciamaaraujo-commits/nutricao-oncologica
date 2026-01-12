@@ -70,17 +70,20 @@
 
 <body class="antialiased">
 
-  <!-- HEADER -->
+  <!-- HEADER (sem CTA de agendamento; CTA único fica no final da página) -->
   <header class="sticky top-0 bg-white/92 backdrop-blur border-b z-50" style="border-color:var(--border);">
-    <nav class="max-w-6xl mx-auto px-4 py-3">
-      <div class="flex items-center justify-between gap-3">
+    <nav class="max-w-6xl mx-auto px-4 py-2.5">
+      <div class="flex items-center justify-between gap-4">
 
         <!-- Logo + Nome -->
-        <a href="./index.html" class="flex items-center gap-3 min-w-0">
-          <img src="./logo-clinica.png" alt="Logo da clínica" class="h-12 sm:h-14 w-auto shrink-0" loading="lazy">
+        <a href="./index.html" class="flex items-center gap-4 min-w-0">
+          <!-- Logo maior, porém equilibrado para não “pesar” no sticky -->
+          <img src="./logo-clinica.png" alt="Logo da clínica" class="h-20 sm:h-24 md:h-28 w-auto shrink-0" loading="lazy">
           <div class="min-w-0 leading-tight">
             <p class="text-sm sm:text-base font-extrabold truncate title">Márcia Araújo</p>
-            <p class="text-xs sm:text-sm truncate">Atendimento especializado</p>
+            <p class="text-xs sm:text-sm font-medium tracking-wide text-slate-500 truncate">
+              Atendimento especializado
+            </p>
           </div>
         </a>
 
@@ -92,12 +95,6 @@
           <a href="./diretrizes.html" class="hover:text-[var(--coral)] transition-colors">Diretrizes</a>
           <a href="./contato.html" class="hover:text-[var(--coral)] transition-colors">Contato</a>
         </div>
-
-        <!-- CTA principal (único) -->
-        <a href="./contato.html" class="btn btn-cta shrink-0">
-          <i data-lucide="calendar-check" class="w-4 h-4"></i>
-          Agendar minha primeira consulta
-        </a>
       </div>
 
       <!-- Chips mobile (curto e útil) -->
@@ -112,47 +109,41 @@
 
   <main id="inicio" class="max-w-6xl mx-auto px-4">
 
-    <!-- HERO -->
+    <!-- HERO (tipografia mais suave; sem CTA de agendamento; sem bloco de dados abaixo) -->
     <section class="py-14 grid lg:grid-cols-12 gap-10 items-center">
       <div class="lg:col-span-7">
-        <p class="text-xs font-extrabold uppercase tracking-widest title">
+        <p class="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
           Terapia nutricional em oncologia • Atendimento online
         </p>
 
-        <h1 class="mt-3 text-4xl sm:text-5xl font-extrabold title leading-tight">
+        <h1 class="mt-3 text-4xl sm:text-5xl font-extrabold title leading-[1.08]">
           Alimentação com estratégia clínica, acolhimento e respeito à sua rotina
         </h1>
 
-        <p class="mt-5 text-lg text-slate-700 leading-relaxed max-w-2xl">
+        <p class="mt-5 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
           Eu conduzo a terapia nutricional em oncologia de forma individualizada, respeitando preferências alimentares,
           tolerância e contexto de vida. O foco é facilitar o manejo alimentar antes, durante e após o tratamento,
           reduzindo desconfortos e trazendo mais segurança para as decisões do dia a dia.
         </p>
 
-        <p class="mt-4 text-sm text-slate-700 leading-relaxed max-w-2xl">
+        <p class="mt-4 text-sm text-slate-600 leading-relaxed max-w-2xl">
           Atuo com acompanhamento nutricional individualizado, em integração com a equipe de saúde, reconhecendo que os resultados dependem de múltiplos fatores e da participação ativa do paciente ao longo do cuidado.
         </p>
 
-        <!-- CTAs: 1 principal + 1 secundário (sem WhatsApp repetido) -->
+        <!-- Ações secundárias (sem agendamento, para não repetir) -->
         <div class="mt-7 flex flex-col sm:flex-row gap-3">
-          <a class="btn btn-cta" href="./contato.html">
-            <i data-lucide="calendar-check" class="w-4 h-4"></i>
-            Agendar minha primeira consulta
+          <a class="btn btn-soft" href="./servicos.html">
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+            Ver serviços
           </a>
           <a class="btn btn-soft" href="./metodologia.html">
             <i data-lucide="route" class="w-4 h-4"></i>
-            Ver metodologia
+            Como funciona
           </a>
-        </div>
-
-        <!-- Dados (não repetir contato aqui) -->
-        <div class="mt-6 text-xs text-slate-600">
-          <p><strong class="title">Márcia Araújo</strong> • Terapia Nutricional em Oncologia</p>
-          <p>Brasil • Atendimento online</p>
         </div>
       </div>
 
-      <!-- Painel lateral -->
+      <!-- Painel lateral (sem o texto “Conteúdo informativo...”) -->
       <div class="lg:col-span-5">
         <div class="soft p-7">
           <div class="flex items-start gap-4">
@@ -161,7 +152,7 @@
             </div>
             <div>
               <h2 class="text-xl font-extrabold title">O que eu priorizo no cuidado</h2>
-              <p class="mt-2 text-sm text-slate-700 leading-relaxed">
+              <p class="mt-2 text-sm text-slate-600 leading-relaxed">
                 Estratégias aplicáveis para sua fase, com foco em tolerância, conforto e continuidade.
               </p>
             </div>
@@ -174,41 +165,15 @@
             <li class="flex gap-2"><span class="title font-extrabold">•</span> Reavaliações e ajustes conforme evolução/tolerância</li>
           </ul>
 
-          <p class="mt-5 text-[11px] text-slate-600 leading-relaxed">
-            Conteúdo informativo. A terapia nutricional é individualizada e deve estar integrada ao acompanhamento da equipe de saúde.
+          <!-- Fechamento mais acolhedor (substitui o texto “Conteúdo informativo...”) -->
+          <p class="mt-5 text-[12px] text-slate-500 leading-relaxed">
+            O acompanhamento é organizado de forma realista para a rotina e ajustado conforme evolução, sintomas e tolerância.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- BLOCO: POR QUE EM PÁGINAS -->
-    <section class="py-12">
-      <div class="card p-8">
-        <div class="flex items-start gap-4">
-          <div class="w-11 h-11 bg-[var(--mint)] text-[var(--petrol)] rounded-xl flex items-center justify-center shrink-0">
-            <i data-lucide="layout" class="w-5 h-5"></i>
-          </div>
-          <div>
-            <h2 class="text-2xl font-extrabold title">Informações organizadas por páginas</h2>
-            <p class="mt-3 text-sm text-slate-700 leading-relaxed max-w-3xl">
-              Para ficar mais claro e confortável no celular, eu deixei cada tema em uma página:
-              <strong>Sobre</strong>, <strong>Metodologia</strong>, <strong>Serviços</strong>, <strong>Diretrizes</strong> e <strong>Contato</strong>.
-              Assim, você encontra o que precisa sem excesso de botões e sem repetição.
-            </p>
-
-            <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-5 gap-3 text-sm">
-              <a class="btn btn-soft w-full" href="./sobre.html"><i data-lucide="user" class="w-4 h-4"></i>Sobre</a>
-              <a class="btn btn-soft w-full" href="./metodologia.html"><i data-lucide="route" class="w-4 h-4"></i>Metodologia</a>
-              <a class="btn btn-soft w-full" href="./servicos.html"><i data-lucide="file-text" class="w-4 h-4"></i>Serviços</a>
-              <a class="btn btn-soft w-full" href="./diretrizes.html"><i data-lucide="book-open" class="w-4 h-4"></i>Diretrizes</a>
-              <a class="btn btn-cta w-full" href="./contato.html"><i data-lucide="calendar-check" class="w-4 h-4"></i>Agendar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ (curto, sem vender) -->
+    <!-- FAQ (mantido; sem tom “jurídico”) -->
     <section class="py-12">
       <h2 class="text-2xl font-extrabold title">Perguntas frequentes</h2>
 
@@ -218,7 +183,7 @@
             <span>Eu posso começar antes do tratamento ou continuar depois?</span>
             <i data-lucide="chevron-down" class="w-5 h-5 title"></i>
           </summary>
-          <p class="mt-3 text-sm text-slate-700 leading-relaxed">
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">
             Sim. Eu posso te acompanhar no preparo nutricional (antes), no manejo de sintomas durante as terapias e também na reabilitação e reorganização alimentar no pós-tratamento.
           </p>
         </details>
@@ -228,7 +193,7 @@
             <span>O atendimento online funciona para oncologia?</span>
             <i data-lucide="chevron-down" class="w-5 h-5 title"></i>
           </summary>
-          <p class="mt-3 text-sm text-slate-700 leading-relaxed">
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">
             Funciona muito bem para orientar rotina, organizar refeições e ajustar condutas conforme sintomas e tolerância. Quando necessário, eu também oriento cuidador/família.
           </p>
         </details>
@@ -238,39 +203,62 @@
             <span>Eu preciso usar suplementos?</span>
             <i data-lucide="chevron-down" class="w-5 h-5 title"></i>
           </summary>
-          <p class="mt-3 text-sm text-slate-700 leading-relaxed">
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed">
             Somente quando há indicação. Eu avalio ingestão, sintomas e tolerância para definir se faz sentido, como usar e quando ajustar.
           </p>
         </details>
       </div>
 
-      <div class="mt-7">
+      <div class="mt-7 flex flex-col sm:flex-row gap-3">
         <a class="btn btn-soft" href="./diretrizes.html">
           <i data-lucide="book-open" class="w-4 h-4"></i>
           Ver diretrizes do cuidado
         </a>
+        <a class="btn btn-soft" href="./sobre.html">
+          <i data-lucide="user" class="w-4 h-4"></i>
+          Conhecer minha trajetória
+        </a>
       </div>
     </section>
 
-    <!-- CTA FINAL (1 só) -->
+    <!-- FINAL: CTA ÚNICO (agendamento apenas no final, como solicitado) -->
     <section class="py-12 mb-10">
-      <div class="soft p-8 text-center">
-        <h2 class="text-2xl font-extrabold title">Se você quiser, eu posso te orientar no próximo passo</h2>
-        <p class="mt-3 text-sm text-slate-700 max-w-2xl mx-auto leading-relaxed">
-          Eu organizo a estratégia nutricional para o seu momento atual, respeitando preferências alimentares e rotina.
-          Quando necessário, eu também oriento cuidador/família para facilitar o cuidado em casa.
-        </p>
+      <div class="soft p-8">
+        <div class="grid lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8">
+            <h2 class="text-2xl sm:text-3xl font-extrabold title leading-tight">
+              Vamos organizar sua alimentação com segurança e leveza
+            </h2>
 
-        <div class="mt-6">
-          <a class="btn btn-cta" href="./contato.html">
-            <i data-lucide="calendar-check" class="w-4 h-4"></i>
-            Agendar minha primeira consulta
-          </a>
+            <p class="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl">
+              Eu avalio seu momento atual, sintomas e rotina para orientar estratégias práticas e viáveis.
+              Se houver cuidador(a) ou família envolvida, eu também posso orientar para facilitar o cuidado em casa.
+            </p>
+
+            <ul class="mt-5 space-y-2 text-sm text-slate-700">
+              <li class="flex gap-2"><span class="title font-extrabold">•</span> Orientações aplicáveis à sua fase</li>
+              <li class="flex gap-2"><span class="title font-extrabold">•</span> Ajustes conforme tolerância e sintomas</li>
+              <li class="flex gap-2"><span class="title font-extrabold">•</span> Acompanhamento e reavaliações</li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-4">
+            <div class="card p-6 text-center">
+              <p class="text-sm font-semibold text-slate-600">
+                Agendamento
+              </p>
+
+              <a class="btn btn-cta w-full mt-4" href="./contato.html">
+                <i data-lucide="calendar-check" class="w-4 h-4"></i>
+                Agendar minha primeira consulta
+              </a>
+
+              <p class="mt-3 text-xs text-slate-500 leading-relaxed">
+                Ao acessar a página de contato, você encontra os próximos passos e o melhor canal para agendamento.
+              </p>
+            </div>
+          </div>
         </div>
-
-        <p class="mt-5 text-[11px] text-slate-600">
-          Conteúdo informativo. A terapia nutricional é individualizada e deve estar integrada ao acompanhamento da equipe de saúde.
-        </p>
       </div>
     </section>
 
