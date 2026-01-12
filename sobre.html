@@ -42,11 +42,13 @@
       white-space:nowrap; user-select:none;
     }
     .btn:active{ transform:translateY(1px); }
+
     .btn-cta{
       background:var(--coral); color:#fff; border:2px solid var(--coral);
       box-shadow:0 12px 24px rgba(255,138,101,.18);
     }
     .btn-cta:hover{ filter:brightness(.97); }
+
     .btn-soft{ background:#fff; color:var(--petrol); border:1px solid var(--border); }
     .btn-soft:hover{ filter:brightness(.99); }
 
@@ -69,28 +71,23 @@
 
 <body class="antialiased">
 
-  <!-- HEADER -->
+  <!-- HEADER padronizado com index (sem CTA para evitar duplicação) -->
   <header class="sticky top-0 bg-white/92 backdrop-blur border-b z-50" style="border-color:var(--border);">
-    <nav class="max-w-6xl mx-auto px-4 py-3">
-      <div class="flex items-center justify-between gap-3">
+    <nav class="max-w-6xl mx-auto px-4 py-2.5">
+      <div class="flex items-center justify-between gap-4">
 
-        <!-- Voltar -->
-        <a href="./index.html" class="btn btn-soft px-3 sm:px-4">
-          <i data-lucide="arrow-left" class="w-4 h-4"></i>
-          <span class="hidden sm:inline">Voltar</span>
-          <span class="sm:hidden">Início</span>
-        </a>
-
-        <!-- Logo / Nome -->
-        <a href="./index.html" class="flex items-center gap-3 min-w-0">
-          <img src="./logo-clinica.png" alt="Logo da clínica" class="h-12 sm:h-14 w-auto shrink-0" loading="lazy">
+        <!-- Logo + Nome -->
+        <a href="./index.html#inicio" class="flex items-center gap-4 min-w-0">
+          <img src="./logo-clinica.png" alt="Logo da clínica" class="h-20 sm:h-24 md:h-28 w-auto shrink-0" loading="lazy">
           <div class="min-w-0 leading-tight">
             <p class="text-sm sm:text-base font-extrabold truncate title">Márcia Araújo</p>
-            <p class="text-xs sm:text-sm truncate">Atendimento especializado</p>
+            <p class="text-xs sm:text-sm font-medium tracking-wide text-slate-500 truncate">
+              Atendimento especializado
+            </p>
           </div>
         </a>
 
-        <!-- Menu desktop -->
+        <!-- Menu desktop (páginas) -->
         <div class="hidden lg:flex items-center gap-6 text-xs font-extrabold uppercase tracking-widest whitespace-nowrap">
           <a href="./sobre.html" class="hover:text-[var(--coral)] transition-colors">Sobre</a>
           <a href="./metodologia.html" class="hover:text-[var(--coral)] transition-colors">Metodologia</a>
@@ -98,65 +95,83 @@
           <a href="./diretrizes.html" class="hover:text-[var(--coral)] transition-colors">Diretrizes</a>
           <a href="./contato.html" class="hover:text-[var(--coral)] transition-colors">Contato</a>
         </div>
-
-        <!-- CTA principal -->
-        <a href="./contato.html" class="btn btn-cta shrink-0">
-          <i data-lucide="calendar-check" class="w-4 h-4"></i>
-          Agendar minha primeira consulta
-        </a>
       </div>
 
-      <!-- Chips mobile -->
+      <!-- Chips mobile (âncoras internas + páginas essenciais; sem CTA) -->
       <div class="lg:hidden mt-3 flex flex-wrap gap-2">
         <a class="chip" href="#sobre"><i data-lucide="user" class="w-4 h-4"></i>Sobre</a>
         <a class="chip" href="#abordagem"><i data-lucide="stethoscope" class="w-4 h-4"></i>Abordagem</a>
+        <a class="chip" href="#online"><i data-lucide="video" class="w-4 h-4"></i>Online</a>
         <a class="chip" href="#cuidadores"><i data-lucide="users" class="w-4 h-4"></i>Cuidadores</a>
-        <a class="chip" href="./contato.html"><i data-lucide="calendar-check" class="w-4 h-4"></i>Agendar</a>
+        <a class="chip" href="./contato.html"><i data-lucide="message-circle" class="w-4 h-4"></i>Contato</a>
       </div>
     </nav>
   </header>
 
   <main class="max-w-5xl mx-auto px-4 py-14">
 
-    <!-- HERO -->
-    <section id="sobre" class="text-center mb-10">
-      <p class="text-xs font-extrabold uppercase tracking-widest title">Sobre mim</p>
-      <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold title">Márcia Araújo</h1>
+    <!-- HERO com foto + mensagem (funciona mesmo sem JS) -->
+    <section id="sobre" class="mb-12">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5">
+          <!-- Foto: renomeie seu arquivo para marcia.jpg (ou ajuste o src para o nome real) -->
+          <div class="card p-3">
+            <img
+              src="./marcia.jpg"
+              alt="Foto de Márcia Araújo"
+              class="w-full h-[340px] sm:h-[420px] object-cover rounded-2xl"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;soft p-8 rounded-3xl text-center&quot;><p class=&quot;font-extrabold title&quot;>Inserir foto</p><p class=&quot;mt-2 text-sm text-slate-600&quot;>Coloque a sua foto na pasta do site com o nome <strong>marcia.jpg</strong> (ou atualize o <code>src</code>).</p></div>';"
+            />
+          </div>
+        </div>
 
-      <p class="mt-4 text-slate-700 leading-relaxed max-w-3xl mx-auto">
-        Minha missão é transformar a nutrição em uma aliada de força e esperança durante a sua jornada.
-      </p>
+        <div class="lg:col-span-7">
+          <p class="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+            Sobre mim
+          </p>
+          <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold title">Márcia Araújo</h1>
 
-      <div class="mt-7 flex justify-center">
-        <a href="./contato.html" class="btn btn-cta">
-          <i data-lucide="calendar-check" class="w-4 h-4"></i>
-          Agendar minha primeira consulta
-        </a>
+          <p class="mt-4 text-slate-700 leading-relaxed max-w-2xl">
+            Minha missão é transformar a nutrição em uma aliada de força e esperança durante a sua jornada.
+          </p>
+
+          <div class="mt-6 card p-7">
+            <p class="text-slate-700 leading-relaxed">
+              Eu acredito que o cuidado oncológico vai além dos medicamentos: ele envolve suporte para a base do corpo — a alimentação.
+              Eu atuo com terapia nutricional em oncologia para apoiar pacientes que buscam não apenas tratar uma doença, mas manter
+              mais conforto, segurança e qualidade de vida ao longo do processo.
+            </p>
+
+            <p class="mt-4 text-slate-700 leading-relaxed">
+              Na prática, eu conduzo um acompanhamento individualizado, respeitando preferências alimentares, cultura, rotina e tolerância
+              em cada fase. O objetivo é tornar a alimentação mais possível no dia a dia, especialmente quando sintomas passam a dificultar comer.
+            </p>
+
+            <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+              O cuidado é integrado à equipe de saúde e depende da participação ativa do paciente, com ajustes conforme evolução clínica e tolerância.
+            </p>
+          </div>
+
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="#abordagem" class="btn btn-soft">
+              <i data-lucide="stethoscope" class="w-4 h-4"></i>
+              Ver abordagem
+            </a>
+            <a href="#agendamento" class="btn btn-soft">
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+              Ir para o agendamento
+            </a>
+          </div>
+        </div>
       </div>
-    </section>
-
-    <!-- TEXTO PRINCIPAL -->
-    <section class="card p-8 mb-10 text-left">
-      <p class="text-slate-700 leading-relaxed">
-        Eu acredito que o tratamento oncológico vai muito além dos medicamentos; ele envolve o cuidado com a base do nosso corpo: a alimentação.
-        Eu atuo com terapia nutricional em oncologia para apoiar pacientes que buscam não apenas tratar uma doença, mas nutrir a vida.
-      </p>
-
-      <p class="mt-4 text-slate-700 leading-relaxed">
-        Na prática, eu conduzo um acompanhamento individualizado, respeitando as preferências alimentares do paciente, a cultura, a rotina e a tolerância
-        em cada fase. O foco é tornar a alimentação mais possível no dia a dia — especialmente quando surgem sintomas que dificultam comer.
-      </p>
-
-      <p class="mt-4 text-xs text-slate-600 leading-relaxed">
-        Atuo com acompanhamento nutricional individualizado, em integração com a equipe de saúde, reconhecendo que os resultados dependem de múltiplos fatores e da participação ativa do paciente ao longo do cuidado.
-      </p>
     </section>
 
     <!-- ABORDAGEM -->
     <section id="abordagem" class="soft p-8 mb-10">
       <h2 class="text-2xl font-extrabold title text-center">Minha abordagem técnica e humana</h2>
       <p class="mt-3 text-sm text-slate-700 max-w-3xl mx-auto text-center leading-relaxed">
-        Eu organizo o cuidado para reduzir inseguranças e facilitar decisões alimentares ao longo do tratamento.
+        Eu organizo o cuidado para reduzir inseguranças e facilitar decisões alimentares ao longo do tratamento, com estratégia e acolhimento.
       </p>
 
       <div class="mt-6 grid md:grid-cols-2 gap-4 text-sm">
@@ -168,7 +183,7 @@
             <div>
               <p class="font-extrabold title">Segurança e estratégia</p>
               <p class="mt-2 text-slate-700 leading-relaxed">
-                Eu foco no manejo alimentar para aumentar conforto, tolerância e organização da rotina — sem planos rígidos e sem “tudo ou nada”.
+                O foco é aumentar conforto, tolerância e organização da rotina — sem planos rígidos e sem “tudo ou nada”.
               </p>
             </div>
           </div>
@@ -196,7 +211,7 @@
             <div>
               <p class="font-extrabold title">Força e funcionalidade</p>
               <p class="mt-2 text-slate-700 leading-relaxed">
-                Eu trabalho para apoiar a manutenção de massa muscular e disposição dentro do que é possível para cada fase, respeitando tolerância e realidade do paciente.
+                Eu apoio manutenção de massa muscular e disposição dentro do que é possível em cada fase, respeitando realidade e tolerância.
               </p>
             </div>
           </div>
@@ -210,7 +225,7 @@
             <div>
               <p class="font-extrabold title">Preferências alimentares</p>
               <p class="mt-2 text-slate-700 leading-relaxed">
-                Eu respeito preferências e aversões. Em vez de impor um padrão alimentar “ideal”, eu construo estratégias que funcionem na vida real e sejam sustentáveis.
+                Eu respeito preferências e aversões. Em vez de impor um padrão “ideal”, eu construo estratégias que funcionem na vida real e sejam sustentáveis.
               </p>
             </div>
           </div>
@@ -219,7 +234,7 @@
     </section>
 
     <!-- ONLINE -->
-    <section class="card p-8 mb-10 text-left">
+    <section id="online" class="card p-8 mb-10 text-left">
       <div class="flex items-start gap-4">
         <div class="w-11 h-11 bg-[var(--mint)] text-[var(--petrol)] rounded-xl flex items-center justify-center shrink-0">
           <i data-lucide="video" class="w-5 h-5"></i>
@@ -227,12 +242,12 @@
         <div>
           <h2 class="text-2xl font-extrabold title">Atendimento online</h2>
           <p class="mt-3 text-sm text-slate-700 leading-relaxed">
-            Eu entendo que o período de tratamento pode ser exaustivo e que o deslocamento nem sempre é simples. Por isso, eu estruturei um modelo de atendimento online
-            que facilita continuidade e ajustes rápidos, sem perder a essência do cuidado.
+            Eu entendo que o período de tratamento pode ser exaustivo e que o deslocamento nem sempre é simples.
+            Por isso, eu estruturei um modelo online que favorece continuidade e ajustes com mais agilidade, sem perder a essência do cuidado.
           </p>
           <p class="mt-3 text-sm text-slate-700 leading-relaxed">
-            No online, eu acompanho sua rotina real: como você organiza refeições, quais alimentos você tolera melhor, quais sintomas aparecem, e o que pode ser ajustado
-            na prática. Isso ajuda muito a manter constância e reduzir tentativas e erros em momentos sensíveis.
+            No online, eu acompanho sua rotina real: organização de refeições, alimentos mais tolerados, sintomas que aparecem e o que pode ser ajustado na prática.
+            Isso ajuda a reduzir tentativas e erros em momentos sensíveis.
           </p>
         </div>
       </div>
@@ -242,54 +257,408 @@
     <section id="cuidadores" class="soft p-8 mb-10">
       <h2 class="text-2xl font-extrabold title text-center">Cuidadores, família e acompanhantes</h2>
       <p class="mt-3 text-sm text-slate-700 max-w-3xl mx-auto text-center leading-relaxed">
-        Eu considero o cuidador uma parte essencial do cuidado nutricional, quando ele participa das refeições e do manejo de sintomas.
+        Quando a rede de apoio participa do preparo e do manejo de sintomas, orientar o cuidador ajuda a tornar as refeições mais leves e seguras.
       </p>
 
       <div class="mt-6 grid md:grid-cols-2 gap-4 text-sm">
         <div class="card p-6">
           <p class="font-extrabold title">Por que eu incluo o cuidador</p>
           <ul class="mt-3 space-y-2 text-slate-700">
-            <li>• Muitas decisões sobre preparo e consistência acontecem em casa</li>
-            <li>• O cuidador observa sintomas e percebe mudanças no apetite</li>
+            <li>• Muitas decisões de preparo e consistência acontecem em casa</li>
+            <li>• A rede de apoio observa sintomas e mudanças no apetite</li>
             <li>• Orientação clara reduz insegurança e conflitos nas refeições</li>
-            <li>• A rede de apoio bem orientada facilita continuidade do plano</li>
+            <li>• Uma rotina bem orientada facilita continuidade do plano</li>
           </ul>
         </div>
 
         <div class="card p-6">
           <p class="font-extrabold title">O que eu ensino na prática</p>
           <ul class="mt-3 space-y-2 text-slate-700">
-            <li>• Como adaptar refeições para dias de náusea ou dor ao engolir</li>
-            <li>• Como organizar pequenas refeições ao longo do dia</li>
-            <li>• O que fazer quando o paladar muda e “nada desce”</li>
-            <li>• Como registrar sinais simples para eu ajustar rapidamente</li>
+            <li>• Adaptações para dias de náusea ou dor ao engolir</li>
+            <li>• Organização de pequenas refeições ao longo do dia</li>
+            <li>• Estratégias quando o paladar muda e “nada desce”</li>
+            <li>• Como registrar sinais simples para ajustes mais rápidos</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="text-center">
+    <!-- CTA FINAL (único CTA da página) -->
+    <section id="agendamento" class="text-center">
       <div class="soft p-8">
         <h2 class="text-2xl font-extrabold title">Próximo passo</h2>
         <p class="mt-3 text-sm text-slate-700 max-w-2xl mx-auto leading-relaxed">
-          Se você quiser alinhar uma estratégia para o seu momento atual, eu posso te orientar no atendimento e, quando necessário,
-          também orientar cuidador/família para facilitar o cuidado em casa.
+          Se você quiser alinhar uma estratégia para o seu momento atual, eu posso te orientar no atendimento e,
+          quando necessário, também orientar cuidador/família para facilitar o cuidado em casa.
         </p>
+
         <div class="mt-6">
           <a class="btn btn-cta" href="./contato.html">
             <i data-lucide="calendar-check" class="w-4 h-4"></i>
             Agendar minha primeira consulta
           </a>
         </div>
-        <p class="mt-5 text-[11px] text-slate-600">
-          Conteúdo informativo. A terapia nutricional é individualizada e deve estar integrada ao acompanhamento da equipe de saúde.
+
+        <p class="mt-5 text-xs text-slate-600">
+          Orientação individualizada e ajustada conforme fase, sintomas e tolerância.
         </p>
       </div>
     </section>
 
   </main>
 
+  <!-- FOOTER padronizado com index (sem CTA) -->
+  <footer class="border-t py-8 mt-10" style="border-color:var(--border);">
+    <div class="max-w-6xl mx-auto px-4 text-sm flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
+      <div class="flex items-center gap-3">
+        <img src="./logo-clinica.png" alt="Logo" class="h-12 sm:h-14 w-auto opacity-80" loading="lazy">
+        <p>© <span id="y"></span> Márcia Araújo • Terapia Nutricional em Oncologia</p>
+      </div>
+      <p><a class="hover:underline title" href="#sobre">Voltar ao topo</a></p>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+Para a foto aparecer
+Coloque sua foto na mesma pasta do site e renomeie para: marcia.jpg
+ou altere esta linha:
+
+html
+Copiar código
+src="./marcia.jpg"
+para o nome correto do arquivo (ex.: ./foto-marcia.png).
+
+Se você me disser o nome exato do arquivo da sua foto (como está no Finder), eu já devolvo o src certinho.
+
+
+
+
+
+
+
+Você disse:
+está como foto-v3.jpg
+
+
+O ChatGPT disse:
+Perfeito — basta trocar o src da imagem para ./foto-v3.jpg. Abaixo vai o sobre.html completo já com essa correção (e mantendo tudo que eu já tinha ajustado: header padrão do index, sem CTA duplicado no header, texto reorganizado, 1 CTA só no final).
+
+html
+Copiar código
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Sobre | Márcia Araújo</title>
+  <meta name="description" content="Sobre Márcia Araújo: terapia nutricional em oncologia com acolhimento, estratégia e respeito às preferências alimentares. Atendimento online, com orientação também para cuidadores e família." />
+  <meta name="theme-color" content="#006064" />
+
+  <link rel="icon" type="image/png" href="./favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root{
+      --petrol:#006064;
+      --coral:#FF8A65;
+      --mint:#E0F2F1;
+      --graph:#37474F;
+      --border:#D7E6E5;
+      --font:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+    }
+
+    html{ scroll-behavior:smooth; }
+    body{ font-family:var(--font); color:var(--graph); background:#fff; font-size:15px; }
+
+    .title{ color:var(--petrol); letter-spacing:-0.015em; }
+    .card{ background:#fff; border:1px solid var(--border); border-radius:1.5rem; }
+    .soft{ background:var(--mint); border:1px solid var(--border); border-radius:1.75rem; }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+      padding:.95rem 1.15rem; border-radius:1rem; font-weight:800;
+      text-decoration:none; line-height:1.05;
+      transition:filter .15s ease, transform .05s ease, box-shadow .15s ease;
+      white-space:nowrap; user-select:none;
+    }
+    .btn:active{ transform:translateY(1px); }
+
+    .btn-cta{
+      background:var(--coral); color:#fff; border:2px solid var(--coral);
+      box-shadow:0 12px 24px rgba(255,138,101,.18);
+    }
+    .btn-cta:hover{ filter:brightness(.97); }
+
+    .btn-soft{ background:#fff; color:var(--petrol); border:1px solid var(--border); }
+    .btn-soft:hover{ filter:brightness(.99); }
+
+    .chip{
+      display:inline-flex; align-items:center; gap:.45rem;
+      border:1px solid var(--border); padding:.35rem .7rem;
+      border-radius:999px; font-weight:800; font-size:.78rem;
+      color:var(--petrol); background:#fff; text-decoration:none; white-space:nowrap;
+    }
+
+    section{ scroll-margin-top: 130px; }
+
+    :focus-visible{
+      outline:3px solid rgba(0,96,100,.28);
+      outline-offset:2px;
+      border-radius:12px;
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- HEADER padronizado com index (sem CTA para evitar duplicação) -->
+  <header class="sticky top-0 bg-white/92 backdrop-blur border-b z-50" style="border-color:var(--border);">
+    <nav class="max-w-6xl mx-auto px-4 py-2.5">
+      <div class="flex items-center justify-between gap-4">
+
+        <!-- Logo + Nome -->
+        <a href="./index.html#inicio" class="flex items-center gap-4 min-w-0">
+          <img src="./logo-clinica.png" alt="Logo da clínica" class="h-20 sm:h-24 md:h-28 w-auto shrink-0" loading="lazy">
+          <div class="min-w-0 leading-tight">
+            <p class="text-sm sm:text-base font-extrabold truncate title">Márcia Araújo</p>
+            <p class="text-xs sm:text-sm font-medium tracking-wide text-slate-500 truncate">
+              Atendimento especializado
+            </p>
+          </div>
+        </a>
+
+        <!-- Menu desktop (páginas) -->
+        <div class="hidden lg:flex items-center gap-6 text-xs font-extrabold uppercase tracking-widest whitespace-nowrap">
+          <a href="./sobre.html" class="hover:text-[var(--coral)] transition-colors">Sobre</a>
+          <a href="./metodologia.html" class="hover:text-[var(--coral)] transition-colors">Metodologia</a>
+          <a href="./servicos.html" class="hover:text-[var(--coral)] transition-colors">Serviços</a>
+          <a href="./diretrizes.html" class="hover:text-[var(--coral)] transition-colors">Diretrizes</a>
+          <a href="./contato.html" class="hover:text-[var(--coral)] transition-colors">Contato</a>
+        </div>
+      </div>
+
+      <!-- Chips mobile (âncoras internas + páginas essenciais; sem CTA) -->
+      <div class="lg:hidden mt-3 flex flex-wrap gap-2">
+        <a class="chip" href="#sobre"><i data-lucide="user" class="w-4 h-4"></i>Sobre</a>
+        <a class="chip" href="#abordagem"><i data-lucide="stethoscope" class="w-4 h-4"></i>Abordagem</a>
+        <a class="chip" href="#online"><i data-lucide="video" class="w-4 h-4"></i>Online</a>
+        <a class="chip" href="#cuidadores"><i data-lucide="users" class="w-4 h-4"></i>Cuidadores</a>
+        <a class="chip" href="./contato.html"><i data-lucide="message-circle" class="w-4 h-4"></i>Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-14">
+
+    <!-- HERO com foto + mensagem -->
+    <section id="sobre" class="mb-12">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5">
+          <div class="card p-3">
+            <img
+              src="./foto-v3.jpg"
+              alt="Foto de Márcia Araújo"
+              class="w-full h-[340px] sm:h-[420px] object-cover rounded-2xl"
+              loading="lazy"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;soft p-8 rounded-3xl text-center&quot;><p class=&quot;font-extrabold title&quot;>Não encontrei a foto</p><p class=&quot;mt-2 text-sm text-slate-600&quot;>Verifique se o arquivo <strong>foto-v3.jpg</strong> está na mesma pasta do site e se o nome está idêntico (maiúsculas/minúsculas).</p></div>';"
+            />
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <p class="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+            Sobre mim
+          </p>
+          <h1 class="mt-2 text-3xl sm:text-4xl font-extrabold title">Márcia Araújo</h1>
+
+          <p class="mt-4 text-slate-700 leading-relaxed max-w-2xl">
+            Minha missão é transformar a nutrição em uma aliada de força e esperança durante a sua jornada.
+          </p>
+
+          <div class="mt-6 card p-7">
+            <p class="text-slate-700 leading-relaxed">
+              Eu acredito que o cuidado oncológico vai além dos medicamentos: ele envolve suporte para a base do corpo — a alimentação.
+              Eu atuo com terapia nutricional em oncologia para apoiar pacientes que buscam não apenas tratar uma doença, mas manter
+              mais conforto, segurança e qualidade de vida ao longo do processo.
+            </p>
+
+            <p class="mt-4 text-slate-700 leading-relaxed">
+              Na prática, eu conduzo um acompanhamento individualizado, respeitando preferências alimentares, cultura, rotina e tolerância
+              em cada fase. O objetivo é tornar a alimentação mais possível no dia a dia, especialmente quando sintomas passam a dificultar comer.
+            </p>
+
+            <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+              O cuidado é integrado à equipe de saúde e depende da participação ativa do paciente, com ajustes conforme evolução clínica e tolerância.
+            </p>
+          </div>
+
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="#abordagem" class="btn btn-soft">
+              <i data-lucide="stethoscope" class="w-4 h-4"></i>
+              Ver abordagem
+            </a>
+            <a href="#agendamento" class="btn btn-soft">
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+              Ir para o agendamento
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABORDAGEM -->
+    <section id="abordagem" class="soft p-8 mb-10">
+      <h2 class="text-2xl font-extrabold title text-center">Minha abordagem técnica e humana</h2>
+      <p class="mt-3 text-sm text-slate-700 max-w-3xl mx-auto text-center leading-relaxed">
+        Eu organizo o cuidado para reduzir inseguranças e facilitar decisões alimentares ao longo do tratamento, com estratégia e acolhimento.
+      </p>
+
+      <div class="mt-6 grid md:grid-cols-2 gap-4 text-sm">
+        <div class="card p-6">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 bg-white rounded-lg border flex items-center justify-center shrink-0" style="border-color:var(--border);">
+              <i data-lucide="shield" class="w-5 h-5 title"></i>
+            </div>
+            <div>
+              <p class="font-extrabold title">Segurança e estratégia</p>
+              <p class="mt-2 text-slate-700 leading-relaxed">
+                O foco é aumentar conforto, tolerância e organização da rotina — sem planos rígidos e sem “tudo ou nada”.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 bg-white rounded-lg border flex items-center justify-center shrink-0" style="border-color:var(--border);">
+              <i data-lucide="utensils" class="w-5 h-5 title"></i>
+            </div>
+            <div>
+              <p class="font-extrabold title">Manejo de sintomas</p>
+              <p class="mt-2 text-slate-700 leading-relaxed">
+                Eu ajusto consistências, horários, fracionamento e escolhas conforme sintomas como náuseas, alteração de paladar, mucosite, diarreia ou constipação.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 bg-white rounded-lg border flex items-center justify-center shrink-0" style="border-color:var(--border);">
+              <i data-lucide="activity" class="w-5 h-5 title"></i>
+            </div>
+            <div>
+              <p class="font-extrabold title">Força e funcionalidade</p>
+              <p class="mt-2 text-slate-700 leading-relaxed">
+                Eu apoio manutenção de massa muscular e disposição dentro do que é possível em cada fase, respeitando realidade e tolerância.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-6">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 bg-white rounded-lg border flex items-center justify-center shrink-0" style="border-color:var(--border);">
+              <i data-lucide="sliders" class="w-5 h-5 title"></i>
+            </div>
+            <div>
+              <p class="font-extrabold title">Preferências alimentares</p>
+              <p class="mt-2 text-slate-700 leading-relaxed">
+                Eu respeito preferências e aversões. Em vez de impor um padrão “ideal”, eu construo estratégias que funcionem na vida real e sejam sustentáveis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONLINE -->
+    <section id="online" class="card p-8 mb-10 text-left">
+      <div class="flex items-start gap-4">
+        <div class="w-11 h-11 bg-[var(--mint)] text-[var(--petrol)] rounded-xl flex items-center justify-center shrink-0">
+          <i data-lucide="video" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-extrabold title">Atendimento online</h2>
+          <p class="mt-3 text-sm text-slate-700 leading-relaxed">
+            Eu entendo que o período de tratamento pode ser exaustivo e que o deslocamento nem sempre é simples.
+            Por isso, eu estruturei um modelo online que favorece continuidade e ajustes com mais agilidade, sem perder a essência do cuidado.
+          </p>
+          <p class="mt-3 text-sm text-slate-700 leading-relaxed">
+            No online, eu acompanho sua rotina real: organização de refeições, alimentos mais tolerados, sintomas que aparecem e o que pode ser ajustado na prática.
+            Isso ajuda a reduzir tentativas e erros em momentos sensíveis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUIDADORES -->
+    <section id="cuidadores" class="soft p-8 mb-10">
+      <h2 class="text-2xl font-extrabold title text-center">Cuidadores, família e acompanhantes</h2>
+      <p class="mt-3 text-sm text-slate-700 max-w-3xl mx-auto text-center leading-relaxed">
+        Quando a rede de apoio participa do preparo e do manejo de sintomas, orientar o cuidador ajuda a tornar as refeições mais leves e seguras.
+      </p>
+
+      <div class="mt-6 grid md:grid-cols-2 gap-4 text-sm">
+        <div class="card p-6">
+          <p class="font-extrabold title">Por que eu incluo o cuidador</p>
+          <ul class="mt-3 space-y-2 text-slate-700">
+            <li>• Muitas decisões de preparo e consistência acontecem em casa</li>
+            <li>• A rede de apoio observa sintomas e mudanças no apetite</li>
+            <li>• Orientação clara reduz insegurança e conflitos nas refeições</li>
+            <li>• Uma rotina bem orientada facilita continuidade do plano</li>
+          </ul>
+        </div>
+
+        <div class="card p-6">
+          <p class="font-extrabold title">O que eu ensino na prática</p>
+          <ul class="mt-3 space-y-2 text-slate-700">
+            <li>• Adaptações para dias de náusea ou dor ao engolir</li>
+            <li>• Organização de pequenas refeições ao longo do dia</li>
+            <li>• Estratégias quando o paladar muda e “nada desce”</li>
+            <li>• Como registrar sinais simples para ajustes mais rápidos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL (único CTA da página) -->
+    <section id="agendamento" class="text-center">
+      <div class="soft p-8">
+        <h2 class="text-2xl font-extrabold title">Próximo passo</h2>
+        <p class="mt-3 text-sm text-slate-700 max-w-2xl mx-auto leading-relaxed">
+          Se você quiser alinhar uma estratégia para o seu momento atual, eu posso te orientar no atendimento e,
+          quando necessário, também orientar cuidador/família para facilitar o cuidado em casa.
+        </p>
+
+        <div class="mt-6">
+          <a class="btn btn-cta" href="./contato.html">
+            <i data-lucide="calendar-check" class="w-4 h-4"></i>
+            Agendar minha primeira consulta
+          </a>
+        </div>
+
+        <p class="mt-5 text-xs text-slate-600">
+          Orientação individualizada e ajustada conforme fase, sintomas e tolerância.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER padronizado com index (sem CTA) -->
   <footer class="border-t py-8 mt-10" style="border-color:var(--border);">
     <div class="max-w-6xl mx-auto px-4 text-sm flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
       <div class="flex items-center gap-3">
